@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { navigationRef } from 'navigation/RootNavigation';
 
-import { commonScreens, CommonStackParamList, splashScreen } from 'screens';
+import { commonScreens, CommonStackParamList } from 'screens';
 import { theme } from '../../theme';
 
 const screenOptions = {
