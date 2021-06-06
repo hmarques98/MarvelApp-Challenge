@@ -11,21 +11,16 @@ const useReactQuery = <T>({
   path,
   refetchInterval,
 }: useReactQueryProps) => {
-  const { isLoading, error, data, refetch } = useQuery<T>(
+  const { isLoading, error, data, refetch } = useQuery<T, any>(
     queryName,
     async () => {
-      try {
-        const res = await axios.get(path);
-        const { data } = res.data;
-        return data;
-      } catch (error) {
-        log(error, 'useQuery');
-      }
+      const response = await axios.get(path);
+      const { data } = response.data;
+
+      return data;
     },
     {
       refetchInterval: refetchInterval ?? false,
-      refetchOnWindowFocus: 'always',
-      refetchOnMount: 'always',
     },
   );
 

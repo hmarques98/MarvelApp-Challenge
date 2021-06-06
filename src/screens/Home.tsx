@@ -23,11 +23,6 @@ const HomeScreen = () => {
   const { navigate } = useNavigation<HomeScreenNavigationProp>();
   const route = useRoute<HomeScreenRouteProp>();
 
-  const { data } = useReactQuery({
-    path: 'comics',
-    queryName: 'comics',
-  });
-
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
@@ -59,7 +54,13 @@ const HomeScreen = () => {
             style={{ marginLeft: 8 }}
           />
         </Button>
-        <Button variant="rounded" flexDirection="row" width="100%">
+        <Button
+          variant="rounded"
+          flexDirection="row"
+          width="100%"
+          onPress={() => {
+            navigate('SearchForHero');
+          }}>
           <Typography>FIND YOUR HERO</Typography>
           <FontAwesome
             name="search"
