@@ -11,7 +11,7 @@ export type CommonStackParamList = {
 
   /* PLOP_INJECT_TYPE */
   SearchForHero: undefined;
-  Comics: undefined;
+  Comics: { comicPath: string };
   About: undefined;
 };
 
