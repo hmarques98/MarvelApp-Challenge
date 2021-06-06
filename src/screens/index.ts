@@ -14,3 +14,9 @@ export const commonScreens = {
   Home: { component: HomeScreen, options },
   CharacterDetail: { component: CustomWebView },
 };
+
+export const splashScreen = {
+  SplashScreen: {
+    component: '',
+  },
+};

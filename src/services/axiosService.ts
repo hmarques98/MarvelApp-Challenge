@@ -1,4 +1,4 @@
-import { BASE_URL } from '@env';
+import { BASE_URL, API_KEY, HASH_KEY, TS_KEY } from '@env';
 import { log } from '@utils/console';
 import axios from 'axios';
 
@@ -8,7 +8,11 @@ const instance = axios.create({
   timeoutErrorMessage: 'Timeout error',
 });
 
-instance.defaults.headers.common.Authorization = 'AUTH TOKEN';
+instance.defaults.params = {
+  apikey: API_KEY,
+  ts: TS_KEY,
+  hash: HASH_KEY,
+};
 
 instance.interceptors.request.use(
   (request) => {
@@ -22,12 +26,9 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   (response) => {
-    // Edit response config
-
     return response;
   },
   (error) => {
-    log(error, 'error axios');
     return Promise.reject(error.response);
   },
 );

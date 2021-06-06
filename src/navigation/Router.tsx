@@ -2,13 +2,12 @@ import React from 'react';
 import { LinkingOptions, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { navigationRef } from 'navigation/RootNavigation';
 
-import { commonScreens, CommonStackParamList } from 'screens';
+import { commonScreens, CommonStackParamList, splashScreen } from 'screens';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../theme';
-import RNBootSplash from 'react-native-bootsplash';
 
 const screenOptions = {
   cardStyle: { backgroundColor: theme.colors.white },
@@ -31,15 +30,10 @@ export default function Router() {
       <NavigationContainer
         linking={linking}
         ref={navigationRef}
-        onReady={() => {
-          setTimeout(() => {
-            RNBootSplash.hide({ fade: true }); // fade
-          }, 3000);
-        }}>
+        onReady={() => {}}>
         <SafeAreaProvider>
           <Stack.Navigator screenOptions={screenOptions}>
             {Object.entries({
-              // Use the screens normally
               ...commonScreens,
             }).map(([name, props]) => {
               return (
