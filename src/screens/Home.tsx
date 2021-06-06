@@ -27,6 +27,13 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
+
+      <Box bg="primary" alignItems="baseline" alignSelf="center" p="sm" mt="xl">
+        <Typography fontSize="xl" letterSpacing="-4px" fontFamily="marvel">
+          MARVEL
+        </Typography>
+      </Box>
+
       <Box flex={1} alignItems="center" justifyContent="space-evenly">
         <Button variant="rounded" onPress={() => {}}>
           <Typography>MORE ABOUT APP</Typography>

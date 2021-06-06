@@ -24,6 +24,7 @@ declare module 'styled-components' {
     typography: {
       FONT_REGULAR: string;
       FONT_BOLD: string;
+      FONT_EXTRA_BOLD: string;
     };
     borderWidths: {
       none: number;
@@ -63,6 +64,7 @@ declare module 'styled-components' {
     fonts: {
       body: string;
       heading: string;
+      marvel: string;
     };
   }
 }

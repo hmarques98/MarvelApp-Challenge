@@ -23,6 +23,7 @@ const theme: DefaultTheme = {
   typography: {
     FONT_REGULAR: typography.FONT_FAMILY_REGULAR,
     FONT_BOLD: typography.FONT_FAMILY_BOLD,
+    FONT_EXTRA_BOLD: typography.FONT_FAMILY_EXTRA_BOLD,
   },
   borderWidths: { none: 0, xs: 2, sm: 4, md: 8, ls: 16, xl: 32, xxl: 64 },
   bordersColors: {
@@ -54,6 +55,7 @@ const theme: DefaultTheme = {
   fonts: {
     body: typography.FONT_FAMILY_REGULAR,
     heading: typography.FONT_FAMILY_BOLD,
+    marvel: typography.FONT_FAMILY_EXTRA_BOLD,
   },
 };
 
