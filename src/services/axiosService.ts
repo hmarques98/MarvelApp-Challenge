@@ -19,7 +19,7 @@ instance.interceptors.request.use(
     return request;
   },
   (error) => {
-    console.log(error);
+    console.log(error, 'request interceptor');
     return Promise.reject(error);
   },
 );

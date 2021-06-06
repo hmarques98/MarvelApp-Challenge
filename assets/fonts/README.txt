@@ -1,32 +1,30 @@
-Roboto Mono Variable Font
-=========================
+Merriweather Sans Variable Font
+===============================
 
-This download contains Roboto Mono as both variable fonts and static fonts.
+This download contains Merriweather Sans as both variable fonts and static fonts.
 
-Roboto Mono is a variable font with this axis:
+Merriweather Sans is a variable font with this axis:
   wght
 
 This means all the styles are contained in these files:
-  RobotoMono-VariableFont_wght.ttf
-  RobotoMono-Italic-VariableFont_wght.ttf
+  MerriweatherSans-VariableFont_wght.ttf
+  MerriweatherSans-Italic-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Roboto Mono:
-  static/RobotoMono-Thin.ttf
-  static/RobotoMono-ExtraLight.ttf
-  static/RobotoMono-Light.ttf
-  static/RobotoMono-Regular.ttf
-  static/RobotoMono-Medium.ttf
-  static/RobotoMono-SemiBold.ttf
-  static/RobotoMono-Bold.ttf
-  static/RobotoMono-ThinItalic.ttf
-  static/RobotoMono-ExtraLightItalic.ttf
-  static/RobotoMono-LightItalic.ttf
-  static/RobotoMono-Italic.ttf
-  static/RobotoMono-MediumItalic.ttf
-  static/RobotoMono-SemiBoldItalic.ttf
-  static/RobotoMono-BoldItalic.ttf
+in those cases you can use the static font files for Merriweather Sans:
+  static/MerriweatherSans-Light.ttf
+  static/MerriweatherSans-Regular.ttf
+  static/MerriweatherSans-Medium.ttf
+  static/MerriweatherSans-SemiBold.ttf
+  static/MerriweatherSans-Bold.ttf
+  static/MerriweatherSans-ExtraBold.ttf
+  static/MerriweatherSans-LightItalic.ttf
+  static/MerriweatherSans-Italic.ttf
+  static/MerriweatherSans-MediumItalic.ttf
+  static/MerriweatherSans-SemiBoldItalic.ttf
+  static/MerriweatherSans-BoldItalic.ttf
+  static/MerriweatherSans-ExtraBoldItalic.ttf
 
 Get started
 -----------
@@ -67,7 +65,7 @@ Android Apps
 
 License
 -------
-Please read the full license text (LICENSE.txt) to understand the permissions,
+Please read the full license text (OFL.txt) to understand the permissions,
 restrictions and requirements for usage, redistribution, and modification.
 
 You can use them freely in your products & projects - print or digital,

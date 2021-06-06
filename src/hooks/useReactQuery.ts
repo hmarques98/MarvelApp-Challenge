@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
 import axios from '@services/axiosService';
+import { log } from '@utils/console';
 interface useReactQueryProps {
   queryName: string;
   path: string;
@@ -13,9 +14,13 @@ const useReactQuery = <T>({
   const { isLoading, error, data, refetch } = useQuery<T>(
     queryName,
     async () => {
-      const res = await axios.get(path);
-
-      return res.data;
+      try {
+        const res = await axios.get(path);
+        const { data } = res.data;
+        return data;
+      } catch (error) {
+        log(error, 'useQuery');
+      }
     },
     {
       refetchInterval: refetchInterval ?? false,
