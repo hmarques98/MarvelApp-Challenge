@@ -65,7 +65,8 @@
     "react-redux": "^7.2.4",
     "redux-flipper": "^1.4.2",
     "styled-components": "^5.2.1",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "use-debounce": "^6.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -82,6 +83,7 @@
     "@testing-library/react-native": "^7.2.0",
     "@types/detox": "^17.14.0",
     "@types/jest": "^26.0.20",
+    "@types/lodash": "^4.14.170",
     "@types/react-native": "^0.64.0",
     "@types/react-native-vector-icons": "^6.4.6",
     "@types/react-test-renderer": "^16.9.2",
