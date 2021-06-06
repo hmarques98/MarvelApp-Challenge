@@ -9,7 +9,7 @@ import { CommonStackParamList } from 'src/screens';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { theme } from 'theme';
 import useReactQuery from 'hooks/useReactQuery';
-import { log } from '@utils/console';
+import { Button } from 'components/molecules/Button';
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
@@ -27,11 +27,13 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
-      <Box flex={1} alignItems="center" paddingTop={'sm'}>
-        <Typography color={'primary'} fontSize={'xl'} variant="regular">
-          Marvel APP
-        </Typography>
-        <Box mt={'md'} alignItems="center" flex={1}></Box>
+      <Box flex={1} alignItems="center" justifyContent="space-evenly">
+        <Button variant="rounded" onPress={() => {}}>
+          <Typography>MORE ABOUT APP</Typography>
+        </Button>
+        <Button variant="rounded">
+          <Typography>FIND YOUR HERO</Typography>
+        </Button>
       </Box>
     </SafeAreaView>
   );

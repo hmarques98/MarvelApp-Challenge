@@ -6,7 +6,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { navigationRef } from 'navigation/RootNavigation';
 
 import { commonScreens, CommonStackParamList, splashScreen } from 'screens';
-import { ThemeProvider } from 'styled-components';
 import { theme } from '../../theme';
 
 const screenOptions = {
@@ -26,27 +25,25 @@ const linking: LinkingOptions = {
 
 export default function Router() {
   return (
-    <ThemeProvider theme={theme}>
-      <NavigationContainer
-        linking={linking}
-        ref={navigationRef}
-        onReady={() => {}}>
-        <SafeAreaProvider>
-          <Stack.Navigator screenOptions={screenOptions}>
-            {Object.entries({
-              ...commonScreens,
-            }).map(([name, props]) => {
-              return (
-                <Stack.Screen
-                  key={name}
-                  name={name as keyof ParamList}
-                  {...props}
-                />
-              );
-            })}
-          </Stack.Navigator>
-        </SafeAreaProvider>
-      </NavigationContainer>
-    </ThemeProvider>
+    <NavigationContainer
+      linking={linking}
+      ref={navigationRef}
+      onReady={() => {}}>
+      <SafeAreaProvider>
+        <Stack.Navigator screenOptions={screenOptions}>
+          {Object.entries({
+            ...commonScreens,
+          }).map(([name, props]) => {
+            return (
+              <Stack.Screen
+                key={name}
+                name={name as keyof ParamList}
+                {...props}
+              />
+            );
+          })}
+        </Stack.Navigator>
+      </SafeAreaProvider>
+    </NavigationContainer>
   );
 }

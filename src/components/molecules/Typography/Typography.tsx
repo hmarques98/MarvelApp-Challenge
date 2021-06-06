@@ -15,8 +15,6 @@ import {
   typography,
   color,
   ColorProps,
-  FontFamilyProps,
-  fontFamily,
 } from 'styled-system';
 import { theme } from 'theme';
 
