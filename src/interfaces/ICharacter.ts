@@ -52,7 +52,7 @@ export interface Url {
   url: string;
 }
 
-export interface ICardCharacter {
+export interface ICharacter {
   id: number;
   name: string;
   description: string;
