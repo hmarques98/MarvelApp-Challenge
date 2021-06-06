@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar, StyleSheet } from 'react-native';
 import { Box } from 'components/molecules/Box';
 import { Typography } from 'components/molecules/Typography';
-import { CommonStackParamList } from 'src/screens';
+import { CommonStackParamList } from 'screens';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { theme } from 'theme';
 import useReactQuery from 'hooks/useReactQuery';
@@ -47,7 +47,9 @@ const HomeScreen = () => {
         <Button
           variant="rounded"
           flexDirection="row"
-          onPress={() => {}}
+          onPress={() => {
+            navigate('About');
+          }}
           width="100%">
           <Typography>MORE ABOUT THE APP</Typography>
           <FontAwesome

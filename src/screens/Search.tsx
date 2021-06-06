@@ -9,25 +9,25 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { CommonStackParamList } from 'screens';
 import { theme } from 'theme';
 
-type AboutScreenNavigationProp = StackNavigationProp<
+type SearchScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
-  'About'
+  'Search'
 >;
 
-type AboutScreenRouteProp = RouteProp<CommonStackParamList, 'About'>;
+type SearchScreenRouteProp = RouteProp<CommonStackParamList, 'Search'>;
 
-const AboutScreen = () => {
-  const navigation = useNavigation<AboutScreenNavigationProp>();
-  const route = useRoute<AboutScreenRouteProp>();
+const SearchScreen = () => {
+  const navigation = useNavigation<SearchScreenNavigationProp>();
+  const route = useRoute<SearchScreenRouteProp>();
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <Box alignItems="center" justifyContent="center" flex={1}>
-        <Typography>About</Typography>
+        <Typography>Search</Typography>
         <Button onPress={() => {
           navigation.goBack();
           }}>
-          <Typography>Back About</Typography>
+          <Typography>Back Search</Typography>
         </Button>
       </Box>
     </SafeAreaView>
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AboutScreen;
+export default SearchScreen;

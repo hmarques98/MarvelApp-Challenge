@@ -9,25 +9,25 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { CommonStackParamList } from 'screens';
 import { theme } from 'theme';
 
-type AboutScreenNavigationProp = StackNavigationProp<
+type ComicsScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
-  'About'
+  'Comics'
 >;
 
-type AboutScreenRouteProp = RouteProp<CommonStackParamList, 'About'>;
+type ComicsScreenRouteProp = RouteProp<CommonStackParamList, 'Comics'>;
 
-const AboutScreen = () => {
-  const navigation = useNavigation<AboutScreenNavigationProp>();
-  const route = useRoute<AboutScreenRouteProp>();
+const ComicsScreen = () => {
+  const navigation = useNavigation<ComicsScreenNavigationProp>();
+  const route = useRoute<ComicsScreenRouteProp>();
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <Box alignItems="center" justifyContent="center" flex={1}>
-        <Typography>About</Typography>
+        <Typography>Comics</Typography>
         <Button onPress={() => {
           navigation.goBack();
           }}>
-          <Typography>Back About</Typography>
+          <Typography>Back Comics</Typography>
         </Button>
       </Box>
     </SafeAreaView>
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AboutScreen;
+export default ComicsScreen;
