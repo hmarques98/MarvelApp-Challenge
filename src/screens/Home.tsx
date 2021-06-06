@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useNavigation } from '@react-navigation/core';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar, StyleSheet } from 'react-native';
 import { Box } from 'components/molecules/Box';
@@ -10,14 +10,18 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { theme } from 'theme';
 import useReactQuery from 'hooks/useReactQuery';
 import { Button } from 'components/molecules/Button';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-type ProfileScreenNavigationProp = StackNavigationProp<
+type HomeScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
   'Home'
 >;
 
+type HomeScreenRouteProp = RouteProp<CommonStackParamList, 'Home'>;
+
 const HomeScreen = () => {
-  const { navigate } = useNavigation<ProfileScreenNavigationProp>();
+  const { navigate } = useNavigation<HomeScreenNavigationProp>();
+  const route = useRoute<HomeScreenRouteProp>();
 
   const { data } = useReactQuery({
     path: 'comics',
@@ -29,17 +33,38 @@ const HomeScreen = () => {
       <StatusBar barStyle="light-content" />
 
       <Box bg="primary" alignItems="baseline" alignSelf="center" p="sm" mt="xl">
-        <Typography fontSize="xl" letterSpacing="-4px" fontFamily="marvel">
+        <Typography fontSize={'48px'} letterSpacing="-8px" fontFamily="marvel">
           MARVEL
         </Typography>
       </Box>
 
-      <Box flex={1} alignItems="center" justifyContent="space-evenly">
-        <Button variant="rounded" onPress={() => {}}>
-          <Typography>MORE ABOUT APP</Typography>
+      <Box
+        flex={1}
+        alignItems="center"
+        justifyContent="space-evenly"
+        width="60%"
+        alignSelf="center">
+        <Button
+          variant="rounded"
+          flexDirection="row"
+          onPress={() => {}}
+          width="100%">
+          <Typography>MORE ABOUT THE APP</Typography>
+          <FontAwesome
+            name="mobile-phone"
+            size={26}
+            color={theme.colors.white}
+            style={{ marginLeft: 8 }}
+          />
         </Button>
-        <Button variant="rounded">
+        <Button variant="rounded" flexDirection="row" width="100%">
           <Typography>FIND YOUR HERO</Typography>
+          <FontAwesome
+            name="search"
+            size={20}
+            color={theme.colors.white}
+            style={{ marginLeft: 8 }}
+          />
         </Button>
       </Box>
     </SafeAreaView>

@@ -12,6 +12,7 @@ instance.defaults.params = {
   apikey: API_KEY,
   ts: TS_KEY,
   hash: HASH_KEY,
+  orderBy: 'title',
 };
 
 instance.interceptors.request.use(
