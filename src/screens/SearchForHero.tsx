@@ -32,9 +32,9 @@ const SearchForHeroScreen = () => {
   const { data, refetch, isLoading } = useReactQuery<{
     results: ICharacter[];
   }>({
-    path: `characters?nameStartsWith=${text}&orderBy=name`,
+    path: `characters?orderBy=name&${text ? 'nameStartsWith=' + text : ''}`,
     queryName: 'characters',
-    dependency: text,
+    dependency: true,
   });
 
   useEffect(() => {
@@ -59,6 +59,7 @@ const SearchForHeroScreen = () => {
             borderRadius="md"
             my="md">
             <TextInput
+              placeholder="Search for your Hero here with initial name"
               style={{
                 height: 40,
                 color: theme.colors.primary,
@@ -86,7 +87,9 @@ const SearchForHeroScreen = () => {
         <FlatList
           showsVerticalScrollIndicator={false}
           data={data?.results}
-          ListEmptyComponent={() => <Typography>No results</Typography>}
+          ListEmptyComponent={() => (
+            <Typography color="primary">No results</Typography>
+          )}
           renderItem={({ item }) => (
             <CardCharacter
               key={item.id}

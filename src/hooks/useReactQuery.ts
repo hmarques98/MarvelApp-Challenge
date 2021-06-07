@@ -23,7 +23,6 @@ const useReactQuery = <T>({
     },
     {
       refetchInterval: refetchInterval ?? false,
-
       enabled: !!dependency,
     },
   );
