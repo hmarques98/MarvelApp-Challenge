@@ -35,7 +35,7 @@ const FavoritesHeroesScreen = () => {
         <Typography fontSize="xl">Your favorites heroes: </Typography>
         <FlatList
           showsVerticalScrollIndicator={false}
-          data={favoritesHeroes}
+          data={favoritesHeroes.slice().reverse()}
           renderItem={({ item }) => (
             <CardCharacter
               key={item.id}

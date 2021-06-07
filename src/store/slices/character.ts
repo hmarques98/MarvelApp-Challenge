@@ -14,6 +14,12 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     addFavoriteHero: (state, action: PayloadAction<ICharacter>) => {
+      const isFavorite = state.favoritesHeroes.find(
+        (item) => item.name === action.payload.name,
+      );
+      if (isFavorite) {
+        return;
+      }
       state.favoritesHeroes.push(action.payload);
     },
   },
