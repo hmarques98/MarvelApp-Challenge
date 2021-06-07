@@ -52,9 +52,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#what-to-improve">What to improve</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -65,7 +62,7 @@
 ## About The Project
 
  <a href="https://gitlab.com/hmarques98/oowlish-challenge/tree/main/docs">
-    <img src="docs/home_online.png" 
+    <img src="docs/search_heroes_1.png" 
     height="500"
     alt="Logo">
     <img src="docs/pacotes_pendentes_offline.png" 
