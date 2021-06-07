@@ -23,7 +23,6 @@ const CardComic = ({ data, index }: CardComicProps) => {
         key={id}
         flexDirection="row"
         width="100%"
-        px="ls"
         flexWrap="wrap"
         my="ls">
         <Image

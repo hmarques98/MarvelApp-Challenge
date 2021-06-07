@@ -41,7 +41,7 @@ const FavoritesHeroesScreen = () => {
               key={item.id}
               data={item}
               onPress={(comicPath) => {
-                navigation.navigate('Comics', { comicPath });
+                navigation.navigate('Comics', { comicPath, name: item.name });
               }}
             />
           )}

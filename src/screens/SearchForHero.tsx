@@ -42,6 +42,7 @@ const SearchForHeroScreen = () => {
   }, [text, refetch]);
 
   const dispatch = useDispatch();
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <Box>
@@ -67,7 +68,7 @@ const SearchForHeroScreen = () => {
               key={item.id}
               data={item}
               onPress={(comicPath) => {
-                navigation.navigate('Comics', { comicPath });
+                navigation.navigate('Comics', { comicPath, name: item.name });
                 dispatch(addFavoriteHero(item));
               }}
             />

@@ -2,6 +2,7 @@ import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Typography } from 'components/molecules/Typography';
 import CardComic from 'components/organisms/CardComic';
+import SearchBar from 'components/organisms/SearchBar';
 import useReactQuery from 'hooks/useReactQuery';
 import React from 'react';
 import { StyleSheet } from 'react-native';
@@ -32,6 +33,15 @@ const ComicsScreen = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      <SearchBar
+        placeHolder="Search for another hero"
+        onFocus={() => {
+          navigation.navigate('SearchForHero');
+        }}
+      />
+      <Typography>
+        Comics by: <Typography fontSize="ls"> {route.params.name}</Typography>
+      </Typography>
       <FlatList
         ListEmptyComponent={() => <Typography>Is Loading. Wait</Typography>}
         data={isLoading ? [] : data?.results}
@@ -47,6 +57,7 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: theme.colors.backgroundColor,
+    padding: 16,
   },
 });
 
