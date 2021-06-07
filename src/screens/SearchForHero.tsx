@@ -13,6 +13,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Button } from 'components/molecules/Button';
 import CardCharacter from 'components/organisms/CardCharacter';
 import { ICharacter } from 'src/interfaces/ICharacter';
+import { useDispatch } from 'react-redux';
+import { addFavoriteHero } from '@store/slices/character';
 
 type SearchForHeroScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
@@ -41,6 +43,7 @@ const SearchForHeroScreen = () => {
     refetch();
   }, [text, refetch]);
 
+  const dispatch = useDispatch();
   return (
     <SafeAreaView style={styles.safeArea}>
       <Box>
@@ -86,15 +89,18 @@ const SearchForHeroScreen = () => {
           showsVerticalScrollIndicator={false}
           data={data?.results}
           ListEmptyComponent={() => (
-            <Typography color="primary">No results</Typography>
+            <Typography color="primary">
+              {isLoading ? 'Loading. Please wait!' : 'No results'}
+            </Typography>
           )}
           renderItem={({ item }) => (
             <CardCharacter
               key={item.id}
               data={item}
-              onPress={(comicPath) =>
-                navigation.navigate('Comics', { comicPath })
-              }
+              onPress={(comicPath) => {
+                navigation.navigate('Comics', { comicPath });
+                dispatch(addFavoriteHero(item));
+              }}
             />
           )}
         />

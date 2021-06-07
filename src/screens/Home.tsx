@@ -69,6 +69,22 @@ const HomeScreen = () => {
             style={{ marginLeft: 8 }}
           />
         </Button>
+        <Button
+          variant="rounded"
+          flexDirection="row"
+          px="ls"
+          width="100%"
+          onPress={() => {
+            navigate('FavoritesHeroes');
+          }}>
+          <Typography>SEE MY FAVORITES HEROES</Typography>
+          <FontAwesome
+            name="heart"
+            size={20}
+            color={theme.colors.white}
+            style={{ marginLeft: 8 }}
+          />
+        </Button>
       </Box>
     </SafeAreaView>
   );
