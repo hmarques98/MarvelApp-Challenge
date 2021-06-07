@@ -11,6 +11,8 @@ import { theme } from 'theme';
 import useReactQuery from 'hooks/useReactQuery';
 import { Button } from 'components/molecules/Button';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { useSelector } from 'react-redux';
+import { characterState } from '@store/slices';
 
 type HomeScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
@@ -22,6 +24,8 @@ type HomeScreenRouteProp = RouteProp<CommonStackParamList, 'Home'>;
 const HomeScreen = () => {
   const { navigate } = useNavigation<HomeScreenNavigationProp>();
   const route = useRoute<HomeScreenRouteProp>();
+
+  const { favoriteHeroes } = useSelector(characterState);
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -69,22 +73,26 @@ const HomeScreen = () => {
             style={{ marginLeft: 8 }}
           />
         </Button>
-        <Button
-          variant="rounded"
-          flexDirection="row"
-          px="ls"
-          width="100%"
-          onPress={() => {
-            navigate('FavoriteHeroes');
-          }}>
-          <Typography>SEE MY FAVORITE HEROES</Typography>
-          <FontAwesome
-            name="heart"
-            size={20}
-            color={theme.colors.white}
-            style={{ marginLeft: 8 }}
-          />
-        </Button>
+        {favoriteHeroes.length ? (
+          <Button
+            variant="rounded"
+            flexDirection="row"
+            px="ls"
+            width="100%"
+            onPress={() => {
+              navigate('FavoriteHeroes');
+            }}>
+            <Typography>SEE MY FAVORITE HEROES</Typography>
+            <FontAwesome
+              name="heart"
+              size={20}
+              color={theme.colors.white}
+              style={{ marginLeft: 8 }}
+            />
+          </Button>
+        ) : (
+          <Box />
+        )}
       </Box>
     </SafeAreaView>
   );

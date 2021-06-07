@@ -13,6 +13,7 @@ import { ICharacter } from 'src/interfaces/ICharacter';
 import { useDispatch } from 'react-redux';
 import { addFavoriteHero } from '@store/slices/character';
 import SearchBar from 'components/organisms/SearchBar';
+import LottieView from 'lottie-react-native';
 
 type SearchForHeroScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
@@ -54,27 +55,42 @@ const SearchForHeroScreen = () => {
           autoFocus
         />
 
-        <Typography fontSize="ls">Showing 20 heroes: </Typography>
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={data?.results}
-          ListEmptyComponent={() => (
-            <Typography color="primary">
-              {isLoading ? 'Loading. Please wait!' : 'No results'}
-            </Typography>
-          )}
-          style={{ marginTop: 10 }}
-          renderItem={({ item }) => (
-            <CardCharacter
-              key={item.id}
-              data={item}
-              onPress={(comicPath) => {
-                navigation.navigate('Comics', { comicPath, name: item.name });
-                dispatch(addFavoriteHero(item));
-              }}
-            />
-          )}
-        />
+        <Typography fontSize="ls" variant="regular">
+          Showing 20 heroes:{' '}
+        </Typography>
+        {!isLoading ? (
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={data?.results}
+            ListEmptyComponent={() => (
+              <Box justifyContent="center" alignItems="center" height={100}>
+                <Typography color="primary">No results</Typography>
+              </Box>
+            )}
+            style={{ marginTop: 10 }}
+            renderItem={({ item }) => (
+              <CardCharacter
+                key={item.id}
+                data={item}
+                onPress={(comicPath) => {
+                  navigation.navigate('Comics', { comicPath, name: item.name });
+                  dispatch(addFavoriteHero(item));
+                }}
+              />
+            )}
+          />
+        ) : (
+          <LottieView
+            source={require('../../assets/marvel.json')}
+            autoPlay
+            hardwareAccelerationAndroid
+            loop
+            style={{
+              height: 30,
+              width: 30,
+            }}
+          />
+        )}
       </Box>
     </SafeAreaView>
   );

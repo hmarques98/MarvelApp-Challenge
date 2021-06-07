@@ -5,12 +5,11 @@ import {
   useRoute,
 } from '@react-navigation/core';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { log } from '@utils/console';
 import { Typography } from 'components/molecules/Typography';
-import CardComic, { BoxTypeRef } from 'components/organisms/CardComic';
+import CardComic from 'components/organisms/CardComic';
 import SearchBar from 'components/organisms/SearchBar';
 import useReactQuery from 'hooks/useReactQuery';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -18,6 +17,7 @@ import { CommonStackParamList } from 'screens';
 import { IComicsCharacter } from 'src/interfaces/IComicCharacter';
 import { theme } from 'theme';
 import { createAnimatableComponent } from 'react-native-animatable';
+import LottieView from 'lottie-react-native';
 type ComicsScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
   'Comics'
@@ -57,7 +57,18 @@ const ComicsScreen = () => {
       </Typography>
       <FlatListAnimated
         ref={refFlatList}
-        ListEmptyComponent={() => <Typography>Is Loading. Wait</Typography>}
+        ListEmptyComponent={() => (
+          <LottieView
+            source={require('../../assets/marvel.json')}
+            autoPlay
+            hardwareAccelerationAndroid
+            loop
+            style={{
+              height: 30,
+              width: 30,
+            }}
+          />
+        )}
         data={data?.results}
         renderItem={({ item, index }) => (
           <CardComic data={item} index={index} />
