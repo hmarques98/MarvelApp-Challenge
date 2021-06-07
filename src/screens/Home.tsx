@@ -75,9 +75,9 @@ const HomeScreen = () => {
           px="ls"
           width="100%"
           onPress={() => {
-            navigate('FavoritesHeroes');
+            navigate('FavoriteHeroes');
           }}>
-          <Typography>SEE MY FAVORITES HEROES</Typography>
+          <Typography>SEE MY FAVORITE HEROES</Typography>
           <FontAwesome
             name="heart"
             size={20}

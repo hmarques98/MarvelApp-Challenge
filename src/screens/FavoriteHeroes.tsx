@@ -13,29 +13,29 @@ import { useSelector } from 'react-redux';
 import { CommonStackParamList } from 'screens';
 import { theme } from 'theme';
 
-type FavoritesHeroesScreenNavigationProp = StackNavigationProp<
+type FavoriteHeroesScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
-  'FavoritesHeroes'
+  'FavoriteHeroes'
 >;
 
-type FavoritesHeroesScreenRouteProp = RouteProp<
+type FavoriteHeroesScreenRouteProp = RouteProp<
   CommonStackParamList,
-  'FavoritesHeroes'
+  'FavoriteHeroes'
 >;
 
-const FavoritesHeroesScreen = () => {
-  const navigation = useNavigation<FavoritesHeroesScreenNavigationProp>();
-  const route = useRoute<FavoritesHeroesScreenRouteProp>();
+const FavoriteHeroesScreen = () => {
+  const navigation = useNavigation<FavoriteHeroesScreenNavigationProp>();
+  const route = useRoute<FavoriteHeroesScreenRouteProp>();
 
-  const { favoritesHeroes } = useSelector(characterState);
+  const { favoriteHeroes } = useSelector(characterState);
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <Box justifyContent="center" flex={1} p="md">
-        <Typography fontSize="xl">Your favorites heroes: </Typography>
+        <Typography fontSize="xl">Your favorite heroes: </Typography>
         <FlatList
           showsVerticalScrollIndicator={false}
-          data={favoritesHeroes.slice().reverse()}
+          data={favoriteHeroes.slice().reverse()}
           renderItem={({ item }) => (
             <CardCharacter
               key={item.id}
@@ -58,4 +58,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FavoritesHeroesScreen;
+export default FavoriteHeroesScreen;

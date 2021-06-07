@@ -71,9 +71,9 @@
     <img src="docs/list_comics.png" 
     height="500"
      alt="list comics">
-    <img src="docs/favorites.png" 
+    <img src="docs/favorite.png" 
     height="500"
-     alt="favorites heroes">
+     alt="favorite heroes">
   </a>
 
 It was built a application using React Native as framework and consuming the api from [Developer Marvel Portal](https://developer.marvel.com/docs). Also used libraries how Storybook, React Query, Plops Js, React Native Animatable and among others.

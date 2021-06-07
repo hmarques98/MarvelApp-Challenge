@@ -1,6 +1,6 @@
 import HomeScreen from 'screens/Home';
 /* PLOP_INJECT_IMPORT */
-import FavoritesHeroesScreen from 'screens/FavoritesHeroes';
+import FavoriteHeroesScreen from 'screens/FavoriteHeroes';
 import SearchForHeroScreen from 'screens/SearchForHero';
 import ComicsScreen from 'screens/Comics';
 import AboutScreen from 'screens/About';
@@ -11,7 +11,7 @@ export type CommonStackParamList = {
   Home: undefined;
 
   /* PLOP_INJECT_TYPE */
-  FavoritesHeroes: undefined;
+  FavoriteHeroes: undefined;
   SearchForHero: undefined;
   Comics: { comicPath: string; name: string };
   About: undefined;
@@ -22,7 +22,7 @@ const options: StackNavigationOptions = { gestureEnabled: false };
 export const commonScreens = {
   Home: { component: HomeScreen, options },
   /* PLOP_INJECT_SCREEN */
-  FavoritesHeroes: { component: FavoritesHeroesScreen },
+  FavoriteHeroes: { component: FavoriteHeroesScreen },
   SearchForHero: { component: SearchForHeroScreen },
   Comics: { component: ComicsScreen },
   About: { component: AboutScreen },

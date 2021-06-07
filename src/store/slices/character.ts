@@ -2,11 +2,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ICharacter } from 'src/interfaces/ICharacter';
 
 interface IInitialState {
-  favoritesHeroes: ICharacter[];
+  favoriteHeroes: ICharacter[];
 }
 
 const initialState: IInitialState = {
-  favoritesHeroes: [],
+  favoriteHeroes: [],
 };
 
 const authSlice = createSlice({
@@ -14,13 +14,13 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     addFavoriteHero: (state, action: PayloadAction<ICharacter>) => {
-      const isFavorite = state.favoritesHeroes.find(
+      const isFavorite = state.favoriteHeroes.find(
         (item) => item.name === action.payload.name,
       );
       if (isFavorite) {
         return;
       }
-      state.favoritesHeroes.push(action.payload);
+      state.favoriteHeroes.push(action.payload);
     },
   },
 });
