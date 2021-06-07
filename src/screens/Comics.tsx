@@ -1,17 +1,16 @@
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { Box } from 'components/molecules/Box';
-import { Button } from 'components/molecules/Button';
 import { Typography } from 'components/molecules/Typography';
 import CardComic from 'components/organisms/CardComic';
 import useReactQuery from 'hooks/useReactQuery';
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
-import { FlatList, ScrollView } from 'react-native-gesture-handler';
+import { StyleSheet } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { CommonStackParamList } from 'screens';
 import { IComicsCharacter } from 'src/interfaces/IComicCharacter';
 import { theme } from 'theme';
+
 type ComicsScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
   'Comics'

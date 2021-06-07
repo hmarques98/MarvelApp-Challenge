@@ -38,9 +38,7 @@ const SearchForHeroScreen = () => {
   });
 
   useEffect(() => {
-    if (text.length) {
-      refetch();
-    }
+    refetch();
   }, [text, refetch]);
 
   return (
