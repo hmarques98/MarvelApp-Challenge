@@ -64,10 +64,16 @@
  <a href="https://gitlab.com/hmarques98/oowlish-challenge/tree/main/docs">
     <img src="docs/search_heroes_1.png" 
     height="500"
-    alt="Logo">
-    <img src="docs/pacotes_pendentes_offline.png" 
+    alt="search heroes">
+    <img src="docs/search_heroes_2.png" 
     height="500"
-    alt="Logo">
+     alt="search heroes">
+    <img src="docs/list_comics.png" 
+    height="500"
+     alt="list comics">
+    <img src="docs/favorites.png" 
+    height="500"
+     alt="favorites heroes">
   </a>
 
 It was built a application using React Native as framework and consuming the api from [Developer Marvel Portal](https://developer.marvel.com/docs). Also used libraries how Storybook, React Query, Plops Js, React Native Animatable and among others.
