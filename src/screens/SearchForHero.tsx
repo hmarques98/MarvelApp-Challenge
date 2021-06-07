@@ -48,9 +48,10 @@ const SearchForHeroScreen = () => {
       <Box>
         <SearchBar
           onPress={() => refetch()}
-          placeHolder="Search for your Hero here with initial name"
+          placeHolder="Search for your Hero here"
           value={text}
           onChangeText={setText}
+          autoFocus
         />
 
         <Typography fontSize="ls">Showing 20 heroes: </Typography>

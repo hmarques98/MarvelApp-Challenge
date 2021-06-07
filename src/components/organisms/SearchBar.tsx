@@ -16,6 +16,7 @@ const SearchBar = ({
   onPress,
   value,
   placeHolder,
+
   ...restProps
 }: Partial<SearchBarProps>) => {
   return (
