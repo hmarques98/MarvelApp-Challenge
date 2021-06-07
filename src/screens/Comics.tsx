@@ -32,10 +32,6 @@ const ComicsScreen = () => {
   const route = useRoute<ComicsScreenRouteProp>();
   const refFlatList = useRef<typeof FlatListAnimated>(null);
 
-  // useFocusEffect(() => {
-  //   refFlatList.current?.fadeInRight!(800);
-  // });
-
   const { data, isLoading } = useReactQuery<{
     results: IComicsCharacter[];
   }>({

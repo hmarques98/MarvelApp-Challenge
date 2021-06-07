@@ -1,23 +1,14 @@
 import { Box } from 'components/molecules/Box';
-import { Button } from 'components/molecules/Button';
 import { Typography } from 'components/molecules/Typography';
-import React, { useEffect, useRef } from 'react';
+import { BoxAnimation } from 'components/organisms/BoxAnimated';
+import React from 'react';
 import { Image } from 'react-native';
-import {
-  createAnimatableComponent,
-  AnimatableProperties,
-  View,
-} from 'react-native-animatable';
 import { IComicsCharacter } from 'src/interfaces/IComicCharacter';
 
 interface CardComicProps {
   data: IComicsCharacter;
   index: number;
 }
-
-const BoxAnimation = createAnimatableComponent(Box);
-
-export type BoxTypeRef = typeof BoxAnimation;
 
 const CardComic = React.forwardRef<typeof BoxAnimation, CardComicProps>(
   ({ data, index }, ref) => {
@@ -27,11 +18,9 @@ const CardComic = React.forwardRef<typeof BoxAnimation, CardComicProps>(
     return (
       <Box alignItems="center">
         <BoxAnimation
-          style={{
-            opacity: data ? 0 : 1,
-          }}
           ref={ref}
           animation={'fadeInLeft'}
+          duration={800}
           delay={50 * index}
           key={id}
           flexDirection="row"

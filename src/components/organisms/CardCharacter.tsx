@@ -17,6 +17,7 @@ const CardCharacter = ({ data, onPress }: CardCharacterProps) => {
     'http://gateway.marvel.com/v1/public/',
     '',
   );
+
   return (
     <Button onPress={() => onPress(comicPath)} width="100%" my="ls">
       <Box flexDirection="row" width="100%">
