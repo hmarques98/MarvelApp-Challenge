@@ -1,4 +1,9 @@
-import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
+import {
+  RouteProp,
+  useFocusEffect,
+  useNavigation,
+  useRoute,
+} from '@react-navigation/core';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { log } from '@utils/console';
 import { Typography } from 'components/molecules/Typography';
@@ -25,8 +30,11 @@ const FlatListAnimated = createAnimatableComponent(FlatList);
 const ComicsScreen = () => {
   const navigation = useNavigation<ComicsScreenNavigationProp>();
   const route = useRoute<ComicsScreenRouteProp>();
-  const [showValue, setShowValue] = useState(true);
   const refFlatList = useRef<typeof FlatListAnimated>(null);
+
+  // useFocusEffect(() => {
+  //   refFlatList.current?.fadeInRight!(800);
+  // });
 
   const { data, isLoading } = useReactQuery<{
     results: IComicsCharacter[];
@@ -41,8 +49,11 @@ const ComicsScreen = () => {
       <SearchBar
         placeHolder="Search for another hero"
         onFocus={async () => {
-          await refFlatList.current?.fadeOut!(500);
-          navigation.push('SearchForHero');
+          await refFlatList.current?.fadeOutRight!(800);
+          navigation.reset({
+            index: 0,
+            routes: [{ name: 'Home' }, { name: 'SearchForHero' }],
+          });
         }}
       />
       <Typography>
