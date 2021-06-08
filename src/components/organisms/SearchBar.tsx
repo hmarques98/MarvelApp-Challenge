@@ -16,7 +16,6 @@ const SearchBar = ({
   onPress,
   value,
   placeHolder,
-
   ...restProps
 }: Partial<SearchBarProps>) => {
   return (
@@ -42,7 +41,8 @@ const SearchBar = ({
         hitSlop={{
           right: 20,
         }}
-        onPress={onPress}>
+        onPress={onPress}
+        testID="IconButton">
         <FontAwesome
           name="search"
           size={20}
