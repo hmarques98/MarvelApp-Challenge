@@ -42,7 +42,8 @@ const HomeScreen = () => {
         alignItems="center"
         justifyContent="space-evenly"
         width="60%"
-        alignSelf="center">
+        alignSelf="center"
+        testID="Box">
         <Button
           variant="rounded"
           flexDirection="row"
@@ -75,6 +76,7 @@ const HomeScreen = () => {
         </Button>
         {favoriteHeroes.length ? (
           <Button
+            testID="Button.favoriteHeroes"
             variant="rounded"
             flexDirection="row"
             px="ls"

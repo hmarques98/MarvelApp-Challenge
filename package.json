@@ -61,6 +61,7 @@
     "react-native-user-avatar": "^1.0.7",
     "react-native-vector-icons": "^8.1.0",
     "react-native-webview": "11.4.1",
+    "react-navigation-hooks": "^1.1.0",
     "react-query": "^3.12.0",
     "react-redux": "^7.2.4",
     "redux-flipper": "^1.4.2",
@@ -101,6 +102,8 @@
     "jest": "^26.6.3",
     "jest-circus": "^26.6.3",
     "jest-extended": "^0.11.5",
+    "jest-styled-components": "^7.0.4",
+    "jest-transform-stub": "^2.0.0",
     "lint-staged": "^10.5.3",
     "metro-react-native-babel-preset": "^0.64.0",
     "miragejs": "^0.1.41",
@@ -123,8 +126,5 @@
       "prettier --write .",
       "jest --bail --findRelatedTests"
     ]
-  },
-  "jest": {
-    "transform": {}
   }
 }

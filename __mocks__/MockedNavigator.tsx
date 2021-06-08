@@ -1,18 +1,23 @@
 import React, { ComponentType } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { log } from '@utils/console';
 
 const Stack = createStackNavigator();
 
 type Props = {
   component: ComponentType<any>;
-  params: {};
+  params: any;
 };
 const MockedNavigator = ({ component, params = {} }: Props) => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="MockedScreen" component={component} initialParams={params} />
+      <Stack.Navigator headerMode="none">
+        <Stack.Screen
+          name={component.name}
+          component={component}
+          initialParams={params}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
