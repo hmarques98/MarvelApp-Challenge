@@ -53,15 +53,15 @@ export interface Url {
 }
 
 export interface ICharacter {
-  id: number;
+  id?: number;
   name: string;
-  description: string;
-  modified: Date;
+  description?: string;
+  modified?: Date;
   thumbnail: Thumbnail;
-  resourceURI: string;
-  comics: Comics;
-  series: Series;
-  stories: Stories;
-  events: Events;
-  urls: Url[];
+  resourceURI?: string;
+  comics: Partial<Comics>;
+  series: Partial<Series>;
+  stories?: Partial<Stories>;
+  events?: Events;
+  urls?: Url[];
 }

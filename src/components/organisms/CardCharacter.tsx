@@ -13,7 +13,7 @@ interface CardCharacterProps {
 const CardCharacter = ({ data, onPress }: CardCharacterProps) => {
   const { thumbnail, name, comics, series } = data;
   const { collectionURI } = comics;
-  const comicPath = collectionURI.replace(
+  const comicPath = collectionURI!.replace(
     'http://gateway.marvel.com/v1/public/',
     '',
   );
@@ -31,14 +31,17 @@ const CardCharacter = ({ data, onPress }: CardCharacterProps) => {
             width: 80,
             height: 60,
           }}
+          testID="Image.thumbnail"
         />
         <Box ml="sm">
-          <Typography variant="regular">Name: {name}</Typography>
-          <Typography variant="regular">
-            Comics: {comics.items.length}
+          <Typography variant="regular" testID="Character.name">
+            Name: {name}
+          </Typography>
+          <Typography variant="regular" testID="Character.comics">
+            Comics: {comics.items!.length}
           </Typography>
           <Typography variant="regular">
-            Series: {series.items.length}
+            Series: {series.items!.length}
           </Typography>
         </Box>
       </Box>
