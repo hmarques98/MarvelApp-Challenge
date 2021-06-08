@@ -19,7 +19,7 @@
 <br />
 <p align="center">
   <a href="https://gitlab.com/hmarques98/oowlish-challenge/blob/main/docs/home_offline.png">
-    <img src="docs/home_offline.png" alt="Logo" height="700">
+    <img src="docs/home.png" alt="Logo" height="700">
   </a>
 
   <h3 align="center">React Native App - Marvel Heroes and Comics</h3>
@@ -71,7 +71,7 @@
     <img src="docs/list_comics.png" 
     height="500"
      alt="list comics">
-    <img src="docs/favorite.png" 
+    <img src="docs/favorites.png" 
     height="500"
      alt="favorite heroes">
   </a>
