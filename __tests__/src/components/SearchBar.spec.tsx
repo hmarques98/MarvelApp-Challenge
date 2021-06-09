@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react-native';
 import SearchBar from 'components/organisms/SearchBar';
 
 describe('SearchBar Component', () => {
-  it('should renderer correctly', () => {
+  it('should render correctly', () => {
     render(<SearchBar />);
   });
 
@@ -37,6 +37,7 @@ describe('SearchBar Component', () => {
     const iconButton = getByTestId(buttonTestId);
     expect(iconButton).toBeDefined();
   });
+
   it('should the icon button to be clicked', () => {
     const buttonTestId = 'IconButton';
     const onPress = jest.fn();
@@ -55,6 +56,5 @@ describe('SearchBar Component', () => {
     fireEvent.press(iconButton);
     fireEvent.press(iconButton);
     expect(onPress).toHaveBeenCalledTimes(2);
-    debug();
   });
 });

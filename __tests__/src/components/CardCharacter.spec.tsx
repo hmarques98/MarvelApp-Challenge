@@ -15,11 +15,11 @@ describe('Card Character', () => {
     },
     series: { items: [{ name: 'name', resourceURI: 'anything' }] },
   };
-  it('should renderer correctly', () => {
+  it('should render correctly', () => {
     const onPress = jest.fn();
     render(<CardCharacter onPress={onPress} data={cardCharacter} />);
   });
-  it('should renderer image with https', () => {
+  it('should render image with https', () => {
     const onPress = jest.fn();
     const image = 'Image.thumbnail';
     const { getByTestId } = render(
@@ -30,7 +30,7 @@ describe('Card Character', () => {
     expect(uri).toMatch(/https/);
     expect(uri).toMatch(/http/);
   });
-  it('should renderer character name', () => {
+  it('should render character name', () => {
     const onPress = jest.fn();
 
     const { getByTestId } = render(
