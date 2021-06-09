@@ -133,20 +133,44 @@ In project directory src is all of file to screens and components
 
 The folder plop-templates has all templates to generate templates to create a Component or a Screen.
 
-To create a Component with script run:
+#### To create a Component with script run:
 
-Will to prompt what is name component
+##### Will to prompt what is name component
 
 ```sh
 yarn generate component
 ```
 
-To create a Screen with script run:
+or
 
-Will to prompt what is name screen
+```sh
+npm run generate component
+```
+
+#### To create a Screen with script run:
+
+##### Will to prompt what is name screen
 
 ```sh
 yarn generate screen
+```
+
+or
+
+```sh
+npm run generate screen
+```
+
+#### To run the tests, execute
+
+```sh
+yarn test
+```
+
+or
+
+```sh
+npm run test
 ```
 
 The folder storybook has all configuration working storybook library
