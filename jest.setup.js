@@ -7,10 +7,12 @@ import * as styledSystem from 'styled-system';
 import { jest } from '@jest/globals';
 
 jest.useFakeTimers();
+
 jest.mock('@react-native-community/netinfo', () => mockRNCNetInfo);
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 jest.doMock('styled-system');
+jest.doMock('react-native-animatable');
 
 styledSystem.theme = jest.fn().mockImplementation((k) => k); //
 
@@ -82,6 +84,11 @@ jest.mock('react-native-gesture-handler', () => {
     Directions: {},
   };
 });
+// jest.mock('react-native', () => ({
+//   Animated: {
+//     createAnimatedComponent: (Component) => Component,
+//   },
+// }));
 
 beforeEach(() => {
   global.fetch = jest.fn((...args) => {
