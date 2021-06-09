@@ -81,32 +81,9 @@ export interface Events {
 
 export interface IComicsCharacter {
   id: number;
-  digitalId: number;
+  prices: Price[];
   title: string;
   issueNumber: number;
-  variantDescription: string;
-  description: string;
-  modified: string;
-  isbn: string;
-  upc: string;
-  diamondCode: string;
-  ean: string;
-  issn: string;
-  format: string;
-  pageCount: number;
-  textObjects: TextObject[];
-  resourceURI: string;
-  urls: Url[];
-  series: Series;
-  variants: any[];
-  collections: any[];
-  collectedIssues: any[];
-  dates: Date[];
-  prices: Price[];
   thumbnail: Thumbnail;
-  images: Image[];
-  creators: Creators;
-  characters: Characters;
   stories: Stories;
-  events: Events;
 }
