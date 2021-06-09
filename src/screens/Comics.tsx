@@ -1,9 +1,4 @@
-import {
-  RouteProp,
-  useFocusEffect,
-  useNavigation,
-  useRoute,
-} from '@react-navigation/core';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Typography } from 'components/molecules/Typography';
 import CardComic from 'components/organisms/CardComic';
@@ -18,6 +13,7 @@ import { IComicsCharacter } from 'src/interfaces/IComicCharacter';
 import { theme } from 'theme';
 import { createAnimatableComponent } from 'react-native-animatable';
 import LottieView from 'lottie-react-native';
+import { BoxAnimation } from 'components/organisms/BoxAnimated';
 type ComicsScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
   'Comics'
@@ -32,7 +28,7 @@ const ComicsScreen = () => {
   const route = useRoute<ComicsScreenRouteProp>();
   const refFlatList = useRef<typeof FlatListAnimated>(null);
 
-  const { data, isLoading } = useReactQuery<{
+  const { data } = useReactQuery<{
     results: IComicsCharacter[];
   }>({
     path: route.params.comicPath,
@@ -71,7 +67,9 @@ const ComicsScreen = () => {
         )}
         data={data?.results}
         renderItem={({ item, index }) => (
-          <CardComic data={item} index={index} />
+          <BoxAnimation index={index}>
+            <CardComic data={item} />
+          </BoxAnimation>
         )}
       />
     </SafeAreaView>
