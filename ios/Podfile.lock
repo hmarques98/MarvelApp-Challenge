@@ -302,8 +302,6 @@ PODS:
     - React-Core
   - react-native-startup-time (1.3.0):
     - React
-  - react-native-webview (11.4.1):
-    - React-Core
   - React-perflogger (0.64.1)
   - React-RCTActionSheet (0.64.1):
     - React-Core/RCTActionSheetHeaders (= 0.64.1)
@@ -484,7 +482,6 @@ DEPENDENCIES:
   - react-native-onesignal (from `../node_modules/react-native-onesignal`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-startup-time (from `../node_modules/react-native-startup-time`)
-  - react-native-webview (from `../node_modules/react-native-webview`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -585,8 +582,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-startup-time:
     :path: "../node_modules/react-native-startup-time"
-  react-native-webview:
-    :path: "../node_modules/react-native-webview"
   React-perflogger:
     :path: "../node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -646,7 +641,7 @@ SPEC CHECKSUMS:
   CodePush: 9bb93f52a44ee80b72739d89dead9c7e86c3bd3a
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
   FBLazyVector: 7b423f9e248eae65987838148c36eec1dbfe0b53
-  FBReactNativeSpec: 81e323b08033ca30ad921c241abc1a11af3808a3
+  FBReactNativeSpec: b1257c47e83cf72087f0c970256ba52fdc1e62c3
   Flipper: 1bd2db48dcc31e4b167b9a33ec1df01c2ded4893
   Flipper-DoubleConversion: 38631e41ef4f9b12861c67d17cb5518d06badc41
   Flipper-Folly: 755929a4f851b2fb2c347d533a23f191b008554c
@@ -680,7 +675,6 @@ SPEC CHECKSUMS:
   react-native-onesignal: 2a7c3a5f2aa1c599d94cda6cc583205e1548828d
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   react-native-startup-time: 740451fcbc7e3c8f67b036365387401ab917de1c
-  react-native-webview: 4024b67e9c91810450a5960dff60ae708fd5acd1
   React-perflogger: aad6d4b4a267936b3667260d1f649b6f6069a675
   React-RCTActionSheet: fc376be462c9c8d6ad82c0905442fd77f82a9d2a
   React-RCTAnimation: ba0a1c3a2738be224a08092fa7f1b444ab77d309
@@ -714,4 +708,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c7dc01e7271fc46ebed8fd79c64c657edca9c4e7
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

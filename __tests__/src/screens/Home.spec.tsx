@@ -8,7 +8,7 @@ import MockedNavigator from '../../../__mocks__/MockedNavigator';
 import { Provider } from 'react-redux';
 export * from '@testing-library/react-native';
 import { configureStore, Store } from '@reduxjs/toolkit';
-import rootReducer from '@store/rootReducer';
+import rootReducer from 'src/config/redux/store/rootReducer';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'theme';
 

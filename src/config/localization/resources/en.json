@@ -1,0 +1,13 @@
+{
+  "home": {
+    "aboutTheApp": "More about the App"
+  },
+  "languages": {
+    "en": "English",
+    "ro": "Romanian"
+  },
+  "onboarding": {
+    "sign": "Sign up / Sign in",
+    "forgot": "Forgot my password"
+  }
+}

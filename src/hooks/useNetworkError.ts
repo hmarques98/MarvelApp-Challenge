@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import { useNetInfo } from '@react-native-community/netinfo';
-import { getCurrentRoute, goBack, navigate } from 'navigation/RootNavigation';
+import {
+  getCurrentRoute,
+  goBack,
+  navigate,
+} from '../config/navigation/RootNavigation';
 
 export default function useNetworkError() {
   const { isConnected } = useNetInfo();

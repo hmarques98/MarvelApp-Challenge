@@ -17,7 +17,7 @@ const getStorybookUIRoot = () => {
   ));
 
   configure(() => {
-    require('../src/components/stories');
+    require('../src/shared/components/stories');
   }, module);
   return getStorybookUI({
     asyncStorage:

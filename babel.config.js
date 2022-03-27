@@ -13,30 +13,30 @@ module.exports = {
         allowUndefined: true,
       },
     ],
-    [
-      require.resolve('babel-plugin-module-resolver'),
-      {
-        root: ['.'],
-        alias: {
-          'assets': './assets',
-          'components': './src/components',
-          'hooks': './src/hooks',
-          'localization': './src/localization',
-          'navigation': './src/navigation',
-          'screens': './src/screens',
-          '@utils': './src/utils',
-          '@auth': './src/modules/auth',
-          '@store': './src/store',
-          '@services': './src/services',
-          'theme': './theme',
-          'styles': './src/styles',
-        },
-      },
-    ],
+    // [
+    //   require.resolve('babel-plugin-module-resolver'),
+    //   {
+    //     root: ['.'],
+    //     alias: {
+    //       'assets': './assets',
+    //       'components': './src/components',
+    //       'hooks': './src/hooks',
+    //       'localization': './src/localization',
+    //       'navigation': './src/navigation',
+    //       'screens': './src/screens',
+    //       '@utils': './src/utils',
+    //       '@auth': './src/modules/auth',
+    //       '@store': './src/store',
+    //       '@services': './src/services',
+    //       'theme': './theme',
+    //       'styles': './src/styles',
+    //     },
+    //   },
+    // ],
   ],
   env: {
     production: {
-      plugins: ['react-native-paper/babel'],
+      plugins: [],
     },
   },
 };
