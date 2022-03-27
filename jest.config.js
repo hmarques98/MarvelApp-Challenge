@@ -14,4 +14,4 @@ module.exports = {
     '^styled-components$': '<rootDir>/node_modules/styled-components',
   },
   setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js'],
-};
+}

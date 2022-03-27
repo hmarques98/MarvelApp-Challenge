@@ -7,8 +7,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
+[![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
 <!-- [![MIT License][license-shield]][license-url] -->
@@ -76,7 +75,10 @@
      alt="favorite heroes">
   </a>
 
-It was built a application using React Native as framework and consuming the api from [Developer Marvel Portal](https://developer.marvel.com/docs). Also used libraries how Storybook, React Query, Plops Js, React Native Animatable and among others.
+It was built a application using React Native as framework and consuming the api
+from [Developer Marvel Portal](https://developer.marvel.com/docs). Also used
+libraries how Storybook, React Query, Plops Js, React Native Animatable and
+among others.
 
 ### Built With
 
@@ -99,7 +101,8 @@ It was built a application using React Native as framework and consuming the api
 
 ## Getting Started
 
-You need to have installed NodeJs and configured on machine and on your OS to run on emulator to Android or simulator in iOS
+You need to have installed NodeJs and configured on machine and on your OS to
+run on emulator to Android or simulator in iOS
 
 ### Installation
 
@@ -131,7 +134,8 @@ You need to have installed NodeJs and configured on machine and on your OS to ru
 
 In project directory src is all of file to screens and components
 
-The folder plop-templates has all templates to generate templates to create a Component or a Screen.
+The folder plop-templates has all templates to generate templates to create a
+Component or a Screen.
 
 #### To create a Component with script run:
 
@@ -179,10 +183,11 @@ To see working go to index.js in root directory and change to true the variable:
 Ex:
 
 ```js
-const showStorybook = true;
+const showStorybook = true
 ```
 
-Now go to your application and you will see the library working and components Button, Typography and Box created.
+Now go to your application and you will see the library working and components
+Button, Typography and Box created.
 
 <!-- LICENSE -->
 
@@ -194,24 +199,33 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Henrique Marques - [@hmarques98\_](https://twitter.com/@hmarques98) - marquesprogrammer@hotmail.com.com
+Henrique Marques - [@hmarques98\_](https://twitter.com/@hmarques98) -
+marquesprogrammer@hotmail.com.com
 
-Project Link: [https://gitlab.com/hmarques98/oowlish-challenge](https://gitlab.com/hmarques98/oowlish-challenge)
+Project Link:
+[https://gitlab.com/hmarques98/oowlish-challenge](https://gitlab.com/hmarques98/oowlish-challenge)
 
 <!-- ACKNOWLEDGEMENTS -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-url]: https://gitlab.com/hmarques98/oowlish-challenge/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/hmarques98/RNOffGeoLoc.svg?style=for-the-badge
+[contributors-url]:
+  https://gitlab.com/hmarques98/oowlish-challenge/graphs/contributors
+[forks-shield]:
+  https://img.shields.io/github/forks/hmarques98/RNOffGeoLoc.svg?style=for-the-badge
 [forks-url]: https://gitlab.com/hmarques98/oowlish-challenge/network/members
-[stars-shield]: https://img.shields.io/github/stars/hmarques98/RNOffGeoLoc.svg?style=for-the-badge
+[stars-shield]:
+  https://img.shields.io/github/stars/hmarques98/RNOffGeoLoc.svg?style=for-the-badge
 [stars-url]: https://gitlab.com/hmarques98/oowlish-challenge/stargazers
-[issues-shield]: https://img.shields.io/github/issues/hmarques98/RNOffGeoLoc.svg?style=for-the-badge
+[issues-shield]:
+  https://img.shields.io/github/issues/hmarques98/RNOffGeoLoc.svg?style=for-the-badge
 [issues-url]: https://gitlab.com/hmarques98/oowlish-challenge/issues
-[license-shield]: https://img.shields.io/github/license/hmarques98/RNOffGeoLoc.svg?style=for-the-badge
-[license-url]: https://gitlab.com/hmarques98/oowlish-challenge/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[license-shield]:
+  https://img.shields.io/github/license/hmarques98/RNOffGeoLoc.svg?style=for-the-badge
+[license-url]:
+  https://gitlab.com/hmarques98/oowlish-challenge/blob/master/LICENSE.txt
+[linkedin-shield]:
+  https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/hmarques98
 [product-screenshot]: images/screenshot.png
