@@ -4,6 +4,7 @@ import { name as appName } from './app.json'
 import getStorybookUI from './storybook'
 import './src/config/localization'
 LogBox.ignoreLogs(['Setting a timer'])
+
 let EntryPoint
 const showStorybook = false
 

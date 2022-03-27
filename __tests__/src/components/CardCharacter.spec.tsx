@@ -1,52 +1,73 @@
 import React from 'react'
 
-import { render } from '@testing-library/react-native'
+import { fireEvent, render } from '@testing-library/react-native'
 import CardCharacter from '../../../src/domain/app/components/CardCharacter'
 
-describe('Card Character', () => {
+const setup = () => {
+  const onPress = jest.fn()
   const cardCharacter = {
     thumbnail: { path: 'http', extension: '' },
     name: 'name',
     comics: {
-      items: [{ name: 'name', resourceURI: 'anything' }],
+      items: [
+        {
+          name: 'name',
+          resourceURI: 'http://gateway.marvel.com/v1/public/anything',
+        },
+      ],
       collectionURI: '',
     },
     series: { items: [{ name: 'name', resourceURI: 'anything' }] },
   }
-  it('should render correctly', () => {
-    const onPress = jest.fn()
-    render(<CardCharacter onPress={onPress} data={cardCharacter} />)
-  })
-  it('should render image with https', () => {
-    const onPress = jest.fn()
-    const image = 'Image.thumbnail'
-    const { getByTestId } = render(
-      <CardCharacter onPress={onPress} data={cardCharacter} />,
-    )
 
-    const { uri } = getByTestId(image).props.source
+  return {
+    ...render(<CardCharacter onPress={onPress} data={cardCharacter} />),
+    onPress,
+    cardCharacter,
+  }
+}
+describe('Card Character', () => {
+  it('should render correctly', () => {
+    setup()
+  })
+
+  it('should render image with https', () => {
+    const { getByTestId } = setup()
+    const imageTestId = 'img.thumbnail'
+    const { uri } = getByTestId(imageTestId).props.source
+
     expect(uri).toMatch(/https/)
     expect(uri).toMatch(/http/)
   })
-  it('should render character name', () => {
-    const onPress = jest.fn()
 
-    const { getByTestId } = render(
-      <CardCharacter onPress={onPress} data={cardCharacter} />,
-    )
-    const characterNameTestId = 'Character.name'
-    const characterName = getByTestId(characterNameTestId)
-    expect(characterName).toHaveTextContent(/name/)
+  it('should render character with props correctly', () => {
+    const { queryByText, cardCharacter } = setup()
+
+    const name = `Name: ${cardCharacter.name}`
+    const comics = `Comics: ${cardCharacter.comics.items.length}`
+    const series = `Series: ${cardCharacter.series.items.length}`
+
+    expect(queryByText(name)).toBeTruthy()
+    expect(queryByText(comics)).toBeTruthy()
+    expect(queryByText(series)).toBeTruthy()
   })
-  it('should show text with the amount of the comics', () => {
-    const onPress = jest.fn()
 
-    const { getByText } = render(
-      <CardCharacter onPress={onPress} data={cardCharacter} />,
+  it('should onPress have been called when card is pressed', () => {
+    const { getByTestId, onPress, cardCharacter } = setup()
+    const imageTestId = 'img.thumbnail'
+
+    fireEvent.press(getByTestId(imageTestId))
+
+    expect(onPress).toHaveBeenCalled()
+
+    const {
+      comics: { collectionURI },
+    } = cardCharacter
+
+    const comicPath = collectionURI!.replace(
+      'http://gateway.marvel.com/v1/public/',
+      '',
     )
-    const characterComicsTextContent = `Comics: ${cardCharacter.comics.items.length}`
-    const textComics = getByText(characterComicsTextContent)
-
-    expect(textComics).toHaveTextContent(characterComicsTextContent)
+    expect(onPress).toHaveBeenCalledWith(comicPath)
   })
 })

@@ -30,13 +30,11 @@ const CardCharacter = ({ data, onPress }: CardCharacterProps) => {
             width: 80,
             height: 60,
           }}
-          testID="Image.thumbnail"
+          testID="img.thumbnail"
         />
         <Box ml="sm">
-          <Typography variant="regular" testID="Character.name">
-            Name: {name}
-          </Typography>
-          <Typography variant="regular" testID="Character.comics">
+          <Typography variant="regular">Name: {name}</Typography>
+          <Typography variant="regular">
             Comics: {comics.items!.length}
           </Typography>
           <Typography variant="regular">
