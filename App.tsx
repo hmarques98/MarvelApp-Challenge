@@ -6,8 +6,9 @@ import store from './src/config/redux/store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeProvider } from 'styled-components';
 import Router from './src/config/navigation/Router';
-import { theme } from './theme';
+
 import { useNavigationMounting } from './src/config/navigation/RootNavigation';
+import { theme } from './src/core/theme';
 
 enableScreens();
 FileLogger.configure({

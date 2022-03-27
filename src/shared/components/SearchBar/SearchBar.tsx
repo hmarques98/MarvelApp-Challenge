@@ -1,9 +1,12 @@
-import { Box } from 'components/molecules/Box';
-import { Button } from 'components/molecules/Button';
 import React from 'react';
 import { TextInput, TextInputProps } from 'react-native';
-import { theme } from 'theme';
+
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { theme } from '../../../core/theme';
+
+import Box from '../Box';
+import Button from '../Button';
+
 interface SearchBarProps extends TextInputProps {
   onPress(): void;
   value: string;

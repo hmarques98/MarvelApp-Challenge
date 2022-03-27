@@ -6,7 +6,7 @@ import {
 } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../theme';
+import { theme } from '../src/core/theme';
 // Refer to https://github.com/storybookjs/react-native/tree/master/app/react-native#start-command-parameters
 
 const getStorybookUIRoot = () => {

@@ -2,9 +2,8 @@ import i18n, { LanguageDetectorAsyncModule } from 'i18next';
 import { NativeModules, Platform } from 'react-native';
 import { initReactI18next } from 'react-i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { warn } from '@utils/console';
 import resources from './resources';
-console.log(resources);
+import { warn } from '../../shared/utils/console';
 
 const getDeviceLocale = (): string => {
   let locale: string;

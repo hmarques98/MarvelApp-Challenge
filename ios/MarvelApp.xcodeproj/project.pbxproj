@@ -8,30 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MarvelAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MarvelAppTests.m */; };
-		0F295D1314944C68B9FA5D90 /* MerriweatherSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03A642AEE478488DBFF24C6E /* MerriweatherSans-SemiBoldItalic.ttf */; };
-		11369B6EDDD34A6CA27AE75C /* MerriweatherSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8354534DAEE840D689FFA8FE /* MerriweatherSans-BoldItalic.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		18E45426DC14332379770764 /* libPods-MarvelApp-MarvelAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 506EF2AE350C942173C61C24 /* libPods-MarvelApp-MarvelAppTests.a */; };
-		212E590C36A14FDE8DFBDA14 /* MerriweatherSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E534E1746DBB490BBF368D27 /* MerriweatherSans-Medium.ttf */; };
-		4F54BBF4482F4DA18A1813C3 /* MerriweatherSans-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 93639E1013264713BBB7F214 /* MerriweatherSans-Italic-VariableFont_wght.ttf */; };
-		57D87BDBD8BA4389AD6C2C9E /* MerriweatherSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7E0062FDF68415FB26D310F /* MerriweatherSans-ExtraBoldItalic.ttf */; };
-		5AE1BB7CDD814DEF89D98914 /* MerriweatherSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D16DDD0152BF4114A5C77237 /* MerriweatherSans-Light.ttf */; };
-		7E33CB534B1844B7BB25C44B /* MerriweatherSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75462158C2A8427CB0218819 /* MerriweatherSans-Bold.ttf */; };
-		7E98929EDE4444608B7661E7 /* MerriweatherSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31EA1DC2E42D4D759A81D90E /* MerriweatherSans-SemiBold.ttf */; };
-		8B5BCE5B8B81411F8C4F13C4 /* MerriweatherSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8A2FC70BB7B46B39607E664 /* MerriweatherSans-MediumItalic.ttf */; };
-		8ECFE189C9394E0BBC4F7343 /* MerriweatherSans-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C44DEA5FB0B7403A9D9C5543 /* MerriweatherSans-VariableFont_wght.ttf */; };
 		8F4DDD527949F9B9DD2546CA /* libPods-MarvelApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C8B437021E1F4BAC908363 /* libPods-MarvelApp.a */; };
-		99A52C5A717843EE8F8010D7 /* MerriweatherSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A34DE027A7DA4203AF615244 /* MerriweatherSans-ExtraBold.ttf */; };
-		9D1FBECF56E142D7BCABA2B8 /* MerriweatherSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E829B8FEBD73446596CF0721 /* MerriweatherSans-Italic.ttf */; };
 		B0F06FCC7189E6F8066A38B5 /* libPods-MarvelApp-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7ECF692124B8AB644561B5C /* libPods-MarvelApp-OneSignalNotificationServiceExtension.a */; };
 		B64AC7912650876F00C5840B /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64AC7902650876F00C5840B /* BootSplash.storyboard */; };
 		B6783F3B26532CA4005F0881 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6783F3A26532CA4005F0881 /* File.swift */; };
 		B6C5206A265A7ADE00C87CEA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C52069265A7ADE00C87CEA /* NotificationService.swift */; };
 		B6C5206E265A7ADE00C87CEA /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B6C52067265A7ADE00C87CEA /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CCE58DE769454D3D9F7579B3 /* MerriweatherSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25D807CC84B244C6B3757BAA /* MerriweatherSans-Regular.ttf */; };
-		DA64320EA6C74FD6A8DBAADF /* MerriweatherSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BB101244ABA4FFF9CE4FE9A /* MerriweatherSans-LightItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -411,20 +397,6 @@
 			files = (
 				B64AC7912650876F00C5840B /* BootSplash.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				4F54BBF4482F4DA18A1813C3 /* MerriweatherSans-Italic-VariableFont_wght.ttf in Resources */,
-				8ECFE189C9394E0BBC4F7343 /* MerriweatherSans-VariableFont_wght.ttf in Resources */,
-				7E33CB534B1844B7BB25C44B /* MerriweatherSans-Bold.ttf in Resources */,
-				11369B6EDDD34A6CA27AE75C /* MerriweatherSans-BoldItalic.ttf in Resources */,
-				99A52C5A717843EE8F8010D7 /* MerriweatherSans-ExtraBold.ttf in Resources */,
-				57D87BDBD8BA4389AD6C2C9E /* MerriweatherSans-ExtraBoldItalic.ttf in Resources */,
-				9D1FBECF56E142D7BCABA2B8 /* MerriweatherSans-Italic.ttf in Resources */,
-				5AE1BB7CDD814DEF89D98914 /* MerriweatherSans-Light.ttf in Resources */,
-				DA64320EA6C74FD6A8DBAADF /* MerriweatherSans-LightItalic.ttf in Resources */,
-				212E590C36A14FDE8DFBDA14 /* MerriweatherSans-Medium.ttf in Resources */,
-				8B5BCE5B8B81411F8C4F13C4 /* MerriweatherSans-MediumItalic.ttf in Resources */,
-				CCE58DE769454D3D9F7579B3 /* MerriweatherSans-Regular.ttf in Resources */,
-				7E98929EDE4444608B7661E7 /* MerriweatherSans-SemiBold.ttf in Resources */,
-				0F295D1314944C68B9FA5D90 /* MerriweatherSans-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
