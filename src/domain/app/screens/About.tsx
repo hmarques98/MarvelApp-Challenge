@@ -1,21 +1,30 @@
-import React from 'react';
-import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React from 'react'
+import { StyleSheet } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { Box, Typography } from '../../../shared/components';
-import { theme } from '../../../core/theme';
+import { Box, Typography } from '../../../shared/components'
+import { theme } from '../../../core/theme'
 
-import { AppModuleStackProps } from '../navigation';
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: theme.colors.backgroundColor,
+  },
+})
 
-type AboutScreenNavigationProp = StackNavigationProp<
-  AppModuleStackProps,
-  'About'
->;
-
-type AboutScreenRouteProp = RouteProp<AppModuleStackProps, 'About'>;
-
+interface IDescription {
+  screenName: string
+  children: React.ReactNode
+}
+const Description = ({ screenName, children }: IDescription) => {
+  return (
+    <Box my="md">
+      <Typography color="primary">{screenName}</Typography>
+      <Typography>----</Typography>
+      <Typography>{children}</Typography>
+    </Box>
+  )
+}
 const AboutScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -44,28 +53,7 @@ const AboutScreen = () => {
         </Description>
       </Box>
     </SafeAreaView>
-  );
-};
-
-interface IDescription {
-  screenName: string;
-  children: React.ReactNode;
+  )
 }
-const Description = ({ screenName, children }: IDescription) => {
-  return (
-    <Box my="md">
-      <Typography color="primary">{screenName}</Typography>
-      <Typography>----</Typography>
-      <Typography>{children}</Typography>
-    </Box>
-  );
-};
 
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: theme.colors.backgroundColor,
-  },
-});
-
-export default AboutScreen;
+export default AboutScreen

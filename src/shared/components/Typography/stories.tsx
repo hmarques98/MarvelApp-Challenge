@@ -1,7 +1,7 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import Box from '../Box';
-import Typography from './Typography';
+import React from 'react'
+import { storiesOf } from '@storybook/react-native'
+import Box from '../Box'
+import Typography from './Typography'
 
 storiesOf('Typography', module)
   .add(
@@ -11,7 +11,8 @@ storiesOf('Typography', module)
         bgVariant="primary"
         height={'100%'}
         justifyContent="center"
-        alignItems="center">
+        alignItems="center"
+      >
         <Typography variant="regular" fontSize="xl">
           Typography Regular
         </Typography>
@@ -27,12 +28,13 @@ storiesOf('Typography', module)
           bgVariant="primary"
           height={'100%'}
           justifyContent="center"
-          alignItems="center">
+          alignItems="center"
+        >
           <Typography variant="bold" fontSize="xl" fontFamily="body">
             Typography Bold
           </Typography>
         </Box>
-      );
+      )
     },
     { fileName: 'Typography bold' },
-  );
+  )

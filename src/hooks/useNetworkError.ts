@@ -1,24 +1,24 @@
-import { useEffect } from 'react';
-import { useNetInfo } from '@react-native-community/netinfo';
+import { useEffect } from 'react'
+import { useNetInfo } from '@react-native-community/netinfo'
 import {
   getCurrentRoute,
   goBack,
   navigate,
-} from '../config/navigation/RootNavigation';
+} from '../config/navigation/RootNavigation'
 
 export default function useNetworkError() {
-  const { isConnected } = useNetInfo();
+  const { isConnected } = useNetInfo()
 
   useEffect(() => {
-    if (isConnected === null) return;
-    const route = getCurrentRoute();
+    if (isConnected === null) return
+    const route = getCurrentRoute()
 
     // Captured by FileLogger in production
-    console.log({ route, isConnected });
+    console.log({ route, isConnected })
     if (!isConnected && route) {
-      navigate('NetworkError');
+      navigate('NetworkError')
     } else if (route && route.name === 'NetworkError') {
-      goBack();
+      goBack()
     }
-  }, [isConnected]);
+  }, [isConnected])
 }

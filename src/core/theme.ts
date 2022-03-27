@@ -1,5 +1,5 @@
-import { DefaultTheme } from 'styled-components';
-import { colors, spacing, typography } from './styles';
+import { DefaultTheme } from 'styled-components'
+import { colors, typography } from './styles'
 
 const theme: DefaultTheme = {
   space: {
@@ -57,6 +57,6 @@ const theme: DefaultTheme = {
     heading: typography.FONT_FAMILY_BOLD,
     marvel: typography.FONT_FAMILY_EXTRA_BOLD,
   },
-};
+}
 
-export { theme };
+export { theme }

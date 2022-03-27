@@ -1,9 +1,9 @@
-import { combineReducers } from '@reduxjs/toolkit';
+import { combineReducers } from '@reduxjs/toolkit'
 
-import characterReducer from './slices/character';
+import characterReducer from './slices/character'
 
 const rootReducer = combineReducers({
   character: characterReducer,
-});
+})
 
-export default rootReducer;
+export default rootReducer

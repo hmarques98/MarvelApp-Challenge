@@ -1,4 +1,4 @@
-module.exports = (plop) => {
+module.exports = plop => {
   plop.setGenerator('component', {
     description: 'Create a component',
     // User input prompts provided as arguments to the template
@@ -46,7 +46,7 @@ module.exports = (plop) => {
         templateFile: 'plop-templates/ExportIndex.js.hbs',
       },
     ],
-  });
+  })
 
   plop.setGenerator('screen', {
     description: 'Create a common screen',
@@ -95,5 +95,5 @@ module.exports = (plop) => {
         templateFile: 'plop-templates/CommonScreen.js.hbs',
       },
     ],
-  });
-};
+  })
+}

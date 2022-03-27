@@ -1,31 +1,28 @@
-import { createRef, MutableRefObject, useEffect } from 'react';
-import {
-  CommonActions,
-  NavigationContainerRef,
-} from '@react-navigation/native';
-import { warn } from '../../shared/utils/console';
+import { createRef, MutableRefObject, useEffect } from 'react'
+import { CommonActions, NavigationContainerRef } from '@react-navigation/native'
+import { warn } from '../../shared/utils/console'
 
-export const isMountedRef = createRef<boolean>();
+export const isMountedRef = createRef<boolean>()
 
-export const navigationRef = createRef<NavigationContainerRef>();
+export const navigationRef = createRef<NavigationContainerRef>()
 
 export function useNavigationMounting() {
   useEffect(() => {
-    (isMountedRef as MutableRefObject<boolean>).current = true;
+    ;(isMountedRef as MutableRefObject<boolean>).current = true
 
     return () => {
-      (isMountedRef as MutableRefObject<boolean>).current = false;
-    };
-  }, []);
+      ;(isMountedRef as MutableRefObject<boolean>).current = false
+    }
+  }, [])
 }
 
 export function navigate<T>(name: string, params?: T) {
   if (isMountedRef.current && navigationRef.current) {
     // Perform navigation if the app has mounted
 
-    navigationRef.current.navigate(name, params as unknown as object);
+    navigationRef.current.navigate(name, params as unknown as object)
   } else {
-    warn('Navigation not mounted. Cannot navigate to:', name);
+    warn('Navigation not mounted. Cannot navigate to:', name)
     // You can decide what to do if the app hasn't mounted
     // You can ignore this, or add these actions to a queue you can call later
   }
@@ -37,9 +34,9 @@ export function resetRoot(routeName: string, params?: object) {
     navigationRef.current.resetRoot({
       index: 0,
       routes: [{ name: routeName, params }],
-    });
+    })
   } else {
-    warn('Navigation not mounted. Cannot reset root to:', routeName);
+    warn('Navigation not mounted. Cannot reset root to:', routeName)
     // You can decide what to do if the app hasn't mounted
     // You can ignore this, or add these actions to a queue you can call later
   }
@@ -51,40 +48,40 @@ export function setParams(params: object, routeKey?: string) {
     navigationRef.current.dispatch({
       ...CommonActions.setParams(params),
       source: routeKey,
-    });
+    })
   } else {
-    warn('Navigation not mounted. Cannot set params to:', routeKey);
+    warn('Navigation not mounted. Cannot set params to:', routeKey)
     // You can decide what to do if the app hasn't mounted
     // You can ignore this, or add these actions to a queue you can call later
   }
 }
 
 export function canGoBack() {
-  if (!isMountedRef.current || !navigationRef.current) return false;
+  if (!isMountedRef.current || !navigationRef.current) return false
 
-  return navigationRef.current.canGoBack();
+  return navigationRef.current.canGoBack()
 }
 
 export function goBack() {
-  if (!isMountedRef.current || !navigationRef.current) return false;
+  if (!isMountedRef.current || !navigationRef.current) return false
 
-  return navigationRef.current.goBack();
+  return navigationRef.current.goBack()
 }
 
 export function getRootState() {
-  if (!isMountedRef.current || !navigationRef.current) return false;
+  if (!isMountedRef.current || !navigationRef.current) return false
 
-  return navigationRef.current.getRootState();
+  return navigationRef.current.getRootState()
 }
 
 export function getCurrentRoute() {
-  if (!isMountedRef.current || !navigationRef.current) return false;
+  if (!isMountedRef.current || !navigationRef.current) return false
 
-  return navigationRef.current.getCurrentRoute();
+  return navigationRef.current.getCurrentRoute()
 }
 
 export function isFocused() {
-  if (!isMountedRef.current || !navigationRef.current) return false;
+  if (!isMountedRef.current || !navigationRef.current) return false
 
-  return navigationRef.current.isFocused;
+  return navigationRef.current.isFocused
 }

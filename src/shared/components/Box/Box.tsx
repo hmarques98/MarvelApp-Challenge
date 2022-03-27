@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { DefaultTheme } from 'styled-components/native';
+import React from 'react'
+import styled from 'styled-components/native'
 import {
   LayoutProps,
   layout,
@@ -17,9 +17,9 @@ import {
   FlexboxProps,
   position,
   PositionProps,
-} from 'styled-system';
-import { theme } from '../../../core/theme';
-type VariantTypes = 'primary' | 'secondary';
+} from 'styled-system'
+import { theme } from '../../../core/theme'
+type VariantTypes = 'primary' | 'secondary'
 interface BoxProps
   extends LayoutProps,
     ColorProps<typeof theme>,
@@ -28,11 +28,11 @@ interface BoxProps
     FlexProps,
     PositionProps,
     FlexboxProps {
-  children?: React.ReactNode;
-  bgVariant?: VariantTypes;
+  children?: React.ReactNode
+  bgVariant?: VariantTypes
 }
 
-const variantStyle = (theme: DefaultTheme) => {
+const variantStyle = () => {
   return variant<BoxProps, VariantTypes, 'bgVariant'>({
     key: 'box',
     prop: 'bgVariant',
@@ -44,12 +44,12 @@ const variantStyle = (theme: DefaultTheme) => {
         backgroundColor: 'secondary',
       },
     },
-  });
-};
+  })
+}
 
 const Box = styled.View<BoxProps>`
   ${compose(color, layout, space, borders, flex, position, flexbox)}
-  ${({ theme }) => variantStyle(theme)}
-`;
+  ${variantStyle()}
+`
 
-export default Box;
+export default Box

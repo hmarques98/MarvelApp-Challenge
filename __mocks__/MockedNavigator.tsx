@@ -1,14 +1,13 @@
-import React, { ComponentType } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { log } from '@utils/console';
+import React, { ComponentType } from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 type Props = {
-  component: ComponentType<any>;
-  params: any;
-};
+  component: ComponentType<any>
+  params: any
+}
 const MockedNavigator = ({ component, params = {} }: Props) => {
   return (
     <NavigationContainer>
@@ -20,7 +19,7 @@ const MockedNavigator = ({ component, params = {} }: Props) => {
         />
       </Stack.Navigator>
     </NavigationContainer>
-  );
-};
+  )
+}
 
-export default MockedNavigator;
+export default MockedNavigator

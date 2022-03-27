@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { DefaultTheme } from 'styled-components/native';
+import React from 'react'
+import styled from 'styled-components/native'
 import {
   LayoutProps,
   layout,
@@ -17,10 +17,10 @@ import {
   PositionProps,
   ButtonStyleProps,
   buttonStyle,
-} from 'styled-system';
-import { theme } from '../../../core/theme';
+} from 'styled-system'
+import { theme } from '../../../core/theme'
 
-type VariantTypes = 'outlined' | 'rounded' | 'box' | 'disabled';
+type VariantTypes = 'outlined' | 'rounded' | 'box' | 'disabled'
 
 interface ButtonProps
   extends LayoutProps,
@@ -30,11 +30,11 @@ interface ButtonProps
     PositionProps,
     FlexboxProps<typeof theme>,
     ButtonStyleProps {
-  children?: React.ReactNode;
-  variant?: VariantTypes;
+  children?: React.ReactNode
+  variant?: VariantTypes
 }
 
-const variantStyle = (theme: DefaultTheme, disabled: boolean) => {
+const variantStyle = () => {
   return variant<ButtonProps, VariantTypes, 'variant'>({
     key: 'button',
     prop: 'variant',
@@ -57,18 +57,18 @@ const variantStyle = (theme: DefaultTheme, disabled: boolean) => {
         backgroundColor: 'black',
       },
     },
-  });
-};
+  })
+}
 
 const Button = styled.TouchableOpacity<ButtonProps>`
   ${compose(color, layout, space, borders, position, flexbox, buttonStyle)}
 
-  ${({ theme, disabled }) => variantStyle(theme, !!disabled)}
-`;
+  ${variantStyle()}
+`
 Button.defaultProps = {
   justifyContent: 'center',
   alignItems: 'center',
   height: 48,
-};
+}
 
-export default Button;
+export default Button

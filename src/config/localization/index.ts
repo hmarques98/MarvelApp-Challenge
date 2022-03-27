@@ -1,56 +1,56 @@
-import i18n, { LanguageDetectorAsyncModule } from 'i18next';
-import { NativeModules, Platform } from 'react-native';
-import { initReactI18next } from 'react-i18next';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import resources from './resources';
-import { warn } from '../../shared/utils/console';
+import i18n, { LanguageDetectorAsyncModule } from 'i18next'
+import { NativeModules, Platform } from 'react-native'
+import { initReactI18next } from 'react-i18next'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import resources from './resources'
+import { warn } from '../../shared/utils/console'
 
 const getDeviceLocale = (): string => {
-  let locale: string;
+  let locale: string
   if (Platform.OS === 'ios') {
     const {
       SettingsManager: { settings },
-    } = NativeModules;
+    } = NativeModules
 
-    locale = settings.AppleLocale || settings.AppleLanguages[0] || 'en';
+    locale = settings.AppleLocale || settings.AppleLanguages[0] || 'en'
   } else if (Platform.OS === 'android') {
-    locale = NativeModules.I18nManager.localeIdentifier;
-  } else locale = 'en';
+    locale = NativeModules.I18nManager.localeIdentifier
+  } else locale = 'en'
 
-  const [language] = locale.replace('_', '-').split('-'); // returned device locale can have '_' or '-'
+  const [language] = locale.replace('_', '-').split('-') // returned device locale can have '_' or '-'
 
-  return language;
-};
+  return language
+}
 
 const languageDetector: LanguageDetectorAsyncModule = {
-  type: 'languageDetector' as 'languageDetector',
+  type: 'languageDetector' as const,
   async: true, // flags below detection to be async
-  detect: (cb: Function): Promise<string> =>
+  detect: (cb: (lng: string | string[] | undefined) => any): Promise<string> =>
     AsyncStorage.getItem('user-language')
-      .then((language) => {
+      .then(language => {
         if (!language) {
-          const locale = getDeviceLocale();
-          return cb(locale);
+          const locale = getDeviceLocale()
+          return cb(locale)
         }
 
-        return cb(language);
+        return cb(language)
       })
-      .catch((e) => {
-        warn('[Detect user language]', e);
+      .catch(e => {
+        warn('[Detect user language]', e)
       }),
   init: () => {},
   cacheUserLanguage: (language: string) => {
-    AsyncStorage.setItem('user-language', language).catch((e) => {
-      warn('[Cache user language]', e);
-    });
+    AsyncStorage.setItem('user-language', language).catch(e => {
+      warn('[Cache user language]', e)
+    })
   },
-};
+}
 
 i18n.use(languageDetector).use(initReactI18next).init({
   fallbackLng: 'en',
   resources,
   nsSeparator: '.',
   keySeparator: false,
-});
+})
 
-export default i18n;
+export default i18n

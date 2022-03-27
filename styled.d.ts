@@ -1,70 +1,69 @@
-import 'styled-components';
-import 'styled-system';
-import { theme } from 'theme';
+import 'styled-components'
+import 'styled-system'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
     space: {
-      none: number;
-      xs: number;
-      sm: number;
-      md: number;
-      ls: number;
-      xl: number;
-      xxl: number;
-    };
+      none: number
+      xs: number
+      sm: number
+      md: number
+      ls: number
+      xl: number
+      xxl: number
+    }
     colors: {
-      primary: string;
-      secondary: string;
-      white: string;
-      black: string;
-      success: string;
-      backgroundColor: string;
-    };
+      primary: string
+      secondary: string
+      white: string
+      black: string
+      success: string
+      backgroundColor: string
+    }
     typography: {
-      FONT_REGULAR: string;
-      FONT_BOLD: string;
-      FONT_EXTRA_BOLD: string;
-    };
+      FONT_REGULAR: string
+      FONT_BOLD: string
+      FONT_EXTRA_BOLD: string
+    }
     borderWidths: {
-      none: number;
-      xs: number;
-      sm: number;
-      md: number;
-      ls: number;
-      xl: number;
-      xxl: number;
-    };
+      none: number
+      xs: number
+      sm: number
+      md: number
+      ls: number
+      xl: number
+      xxl: number
+    }
     bordersColors: {
-      primary: string;
-      secondary: string;
-      white: string;
-      black: string;
+      primary: string
+      secondary: string
+      white: string
+      black: string
 
-      success: string;
-    };
+      success: string
+    }
     radii: {
-      none: number;
-      xs: number;
-      sm: number;
-      md: number;
-      ls: number;
-      xl: number;
-      xxl: number;
-    };
+      none: number
+      xs: number
+      sm: number
+      md: number
+      ls: number
+      xl: number
+      xxl: number
+    }
     fontSizes: {
-      none: number;
-      xs: number;
-      sm: number;
-      md: number;
-      ls: number;
-      xl: number;
-      xxl: number;
-    };
+      none: number
+      xs: number
+      sm: number
+      md: number
+      ls: number
+      xl: number
+      xxl: number
+    }
     fonts: {
-      body: string;
-      heading: string;
-      marvel: string;
-    };
+      body: string
+      heading: string
+      marvel: string
+    }
   }
 }

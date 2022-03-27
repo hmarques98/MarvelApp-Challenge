@@ -1,43 +1,40 @@
-import { useInfiniteQuery, useQuery } from 'react-query';
-import axios from '@services/axiosService';
-import { log } from '@utils/console';
-interface useInfiniteQueryProps {
-  queryName: string;
-  path: string;
+import { useInfiniteQuery } from 'react-query'
+import { network } from 'src/services/network'
+
+interface UseInfiniteQueryProps {
+  queryName: string
+  path: string
 }
 const useInfiniteReactQuery = <T>({
   queryName,
   path,
-}: useInfiniteQueryProps) => {
+}: UseInfiniteQueryProps) => {
   const {
     status,
     data,
     error,
     isFetching,
     isFetchingNextPage,
-    isFetchingPreviousPage,
     fetchNextPage,
-    fetchPreviousPage,
     hasNextPage,
-    hasPreviousPage,
   } = useInfiniteQuery<T>(
     queryName,
     async ({ pageParam = 1 }) => {
-      const res = await axios.get(path + '?page=' + pageParam);
+      const res = await network.get(path + '?page=' + pageParam)
 
-      return res.data;
+      return res.data
     },
     {
       getNextPageParam: (lastPage, pages) => {
         if (lastPage.next) {
-          return pages.length + 1;
+          return pages.length + 1
         }
       },
-      getPreviousPageParam: (firstPage, pages) => {
-        return firstPage.previous;
+      getPreviousPageParam: firstPage => {
+        return firstPage.previous
       },
     },
-  );
+  )
 
   return {
     data,
@@ -47,6 +44,6 @@ const useInfiniteReactQuery = <T>({
     fetchNextPage,
     status,
     hasNextPage,
-  };
-};
-export default useInfiniteReactQuery;
+  }
+}
+export default useInfiniteReactQuery

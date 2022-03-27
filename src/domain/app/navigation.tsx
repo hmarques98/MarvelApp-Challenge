@@ -1,26 +1,26 @@
-import React from 'react';
+import React from 'react'
 import {
   createStackNavigator,
   StackNavigationOptions,
-} from '@react-navigation/stack';
+} from '@react-navigation/stack'
 
-import { theme } from '../../core/theme';
+import { theme } from '../../core/theme'
 
-import HomeScreen from './screens/Home';
-import AboutScreen from './screens/About';
-import FavoriteHeroesScreen from './screens/FavoriteHeroes';
-import SearchForHeroScreen from './screens/SearchForHero';
-import ComicsScreen from './screens/Comics';
+import HomeScreen from './screens/Home'
+import AboutScreen from './screens/About'
+import FavoriteHeroesScreen from './screens/FavoriteHeroes'
+import SearchForHeroScreen from './screens/SearchForHero'
+import ComicsScreen from './screens/Comics'
 
 export type AppModuleStackProps = {
-  Home: undefined;
-  About: undefined;
-  FavoriteHeroes: undefined;
-  SearchForHero: undefined;
-  Comics: { comicPath: string; name: string };
-};
+  Home: undefined
+  About: undefined
+  FavoriteHeroes: undefined
+  SearchForHero: undefined
+  Comics: { comicPath: string; name: string }
+}
 
-const options: StackNavigationOptions = { gestureEnabled: false };
+const options: StackNavigationOptions = { gestureEnabled: false }
 
 export const screens = {
   Home: { component: HomeScreen, options },
@@ -28,14 +28,14 @@ export const screens = {
   FavoriteHeroes: { component: FavoriteHeroesScreen },
   SearchForHero: { component: SearchForHeroScreen },
   Comics: { component: ComicsScreen },
-};
+}
 
 export const screenOptions = {
   cardStyle: { backgroundColor: theme.colors.white },
   headerShown: false,
-};
+}
 
-const Stack = createStackNavigator<AppModuleStackProps>();
+const Stack = createStackNavigator<AppModuleStackProps>()
 
 const AppNavigation = () => {
   return (
@@ -49,10 +49,10 @@ const AppNavigation = () => {
             name={name as keyof AppModuleStackProps}
             {...props}
           />
-        );
+        )
       })}
     </Stack.Navigator>
-  );
-};
+  )
+}
 
-export default AppNavigation;
+export default AppNavigation

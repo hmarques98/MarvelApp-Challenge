@@ -1,6 +1,6 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import Box from './Box';
+import React from 'react'
+import { storiesOf } from '@storybook/react-native'
+import Box from './Box'
 
 storiesOf('Box', module)
   .add('Background Color', () => (
@@ -15,9 +15,10 @@ storiesOf('Box', module)
           borderRadius="ls"
           justifyContent="center"
           alignItems="center"
-          alignSelf="center">
+          alignSelf="center"
+        >
           <Box bg={'grayLight'} size={50} />
         </Box>
       </Box>
-    );
-  });
+    )
+  })

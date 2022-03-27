@@ -1,22 +1,23 @@
-import { useCallback } from 'react';
-import { BackHandler } from 'react-native';
-import { useFocusEffect } from '@react-navigation/native';
+import { useCallback } from 'react'
+import { BackHandler } from 'react-native'
+import { useFocusEffect } from '@react-navigation/native'
 
 export default function useCustomBackBehaviour(action?: () => void) {
   useFocusEffect(
     useCallback(() => {
       const onBackPress = () => {
         if (action) {
-          action();
-          return true;
+          action()
+          return true
         } else {
-          return false;
+          return false
         }
-      };
+      }
 
-      BackHandler.addEventListener('hardwareBackPress', onBackPress);
+      BackHandler.addEventListener('hardwareBackPress', onBackPress)
 
-      return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+      return () =>
+        BackHandler.removeEventListener('hardwareBackPress', onBackPress)
     }, [action]),
-  );
+  )
 }

@@ -1,29 +1,34 @@
-import React from 'react';
-import { RouteProp, useNavigation } from '@react-navigation/core';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { StatusBar, StyleSheet } from 'react-native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { useSelector } from 'react-redux';
+import React from 'react'
+import { useNavigation } from '@react-navigation/core'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { StatusBar, StyleSheet } from 'react-native'
+import { StackNavigationProp } from '@react-navigation/stack'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import { useSelector } from 'react-redux'
 
-import { characterState } from '../../../config/redux/store/slices';
-import translate from '../../../config/localization';
-import { Box, Button, Typography } from '../../../shared/components';
-import { theme } from '../../../core/theme';
+import { characterState } from '../../../config/redux/store/slices'
+import translate from '../../../config/localization'
+import { Box, Button, Typography } from '../../../shared/components'
+import { theme } from '../../../core/theme'
 
-import { MainModuleStackParam } from '.';
+import { MainModuleStackParam } from '.'
 
 type HomeScreenNavigationProp = StackNavigationProp<
   MainModuleStackParam,
   'Home'
->;
+>
 
-type HomeScreenRouteProp = RouteProp<MainModuleStackParam, 'Home'>;
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: theme.colors.backgroundColor,
+  },
+})
 
 const HomeScreen = () => {
-  const { navigate } = useNavigation<HomeScreenNavigationProp>();
+  const { navigate } = useNavigation<HomeScreenNavigationProp>()
 
-  const { favoriteHeroes } = useSelector(characterState);
+  const { favoriteHeroes } = useSelector(characterState)
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -32,7 +37,8 @@ const HomeScreen = () => {
       <Box bg="primary" alignItems="baseline" alignSelf="center" p="sm" mt="xl">
         <Typography
           style={{ fontSize: 48, letterSpacing: -8 }}
-          fontFamily="marvel">
+          fontFamily="marvel"
+        >
           MARVEL
         </Typography>
       </Box>
@@ -43,14 +49,16 @@ const HomeScreen = () => {
         justifyContent="space-evenly"
         width="60%"
         alignSelf="center"
-        testID="Box">
+        testID="Box"
+      >
         <Button
           variant="rounded"
           flexDirection="row"
           onPress={() => {
-            navigate('About');
+            navigate('About')
           }}
-          width="100%">
+          width="100%"
+        >
           <Typography>{translate.t('home.aboutTheApp')}</Typography>
           <FontAwesome
             name="mobile-phone"
@@ -64,8 +72,9 @@ const HomeScreen = () => {
           flexDirection="row"
           width="100%"
           onPress={() => {
-            navigate('SearchForHero');
-          }}>
+            navigate('SearchForHero')
+          }}
+        >
           <Typography>FIND YOUR HERO</Typography>
           <FontAwesome
             name="search"
@@ -82,8 +91,9 @@ const HomeScreen = () => {
             px="ls"
             width="100%"
             onPress={() => {
-              navigate('FavoriteHeroes');
-            }}>
+              navigate('FavoriteHeroes')
+            }}
+          >
             <Typography>SEE MY FAVORITE HEROES</Typography>
             <FontAwesome
               name="heart"
@@ -97,13 +107,6 @@ const HomeScreen = () => {
         )}
       </Box>
     </SafeAreaView>
-  );
-};
-export default HomeScreen;
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: theme.colors.backgroundColor,
-  },
-});
+  )
+}
+export default HomeScreen

@@ -1,7 +1,7 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react-native';
-import Button from './Button';
-import Typography from '../Typography';
+import React from 'react'
+import { storiesOf } from '@storybook/react-native'
+import Button from './Button'
+import Typography from '../Typography'
 
 storiesOf('Button', module)
   .add('Button Box', () => (
@@ -18,7 +18,7 @@ storiesOf('Button', module)
           Button outlined
         </Typography>
       </Button>
-    );
+    )
   })
   .add('Button Rounded', () => {
     return (
@@ -27,7 +27,7 @@ storiesOf('Button', module)
           Button rounded
         </Typography>
       </Button>
-    );
+    )
   })
   .add('Button Disable', () => {
     return (
@@ -36,5 +36,5 @@ storiesOf('Button', module)
           Button disabled
         </Typography>
       </Button>
-    );
-  });
+    )
+  })

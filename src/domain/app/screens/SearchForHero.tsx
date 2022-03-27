@@ -1,47 +1,50 @@
-import React, { useEffect, useState } from 'react';
-import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { FlatList, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { useDispatch } from 'react-redux';
-import LottieView from 'lottie-react-native';
+import React, { useEffect, useState } from 'react'
+import { useNavigation } from '@react-navigation/core'
+import { StackNavigationProp } from '@react-navigation/stack'
+import { FlatList, StyleSheet } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { useDispatch } from 'react-redux'
+import LottieView from 'lottie-react-native'
 
-import useReactQuery from '../../../hooks/useReactQuery';
-import { Box, SearchBar, Typography } from '../../../shared/components';
-import { addFavoriteHero } from '../../../config/redux/store/slices/character';
-import { theme } from '../../../core/theme';
+import useReactQuery from '../../../hooks/useReactQuery'
+import { Box, SearchBar, Typography } from '../../../shared/components'
+import { addFavoriteHero } from '../../../config/redux/store/slices/character'
+import { theme } from '../../../core/theme'
 
-import { ICharacter } from '../models/interfaces/ICharacter';
-import CardCharacter from '../components/CardCharacter';
-import { AppModuleStackProps } from '../navigation';
+import { ICharacter } from '../models/interfaces/ICharacter'
+import CardCharacter from '../components/CardCharacter'
+import { AppModuleStackProps } from '../navigation'
 
 type SearchForHeroScreenNavigationProp = StackNavigationProp<
   AppModuleStackProps,
   'SearchForHero'
->;
+>
 
-type SearchForHeroScreenRouteProp = RouteProp<
-  AppModuleStackProps,
-  'SearchForHero'
->;
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: theme.colors.backgroundColor,
+    padding: 16,
+  },
+})
 
 const SearchForHeroScreen = () => {
-  const navigation = useNavigation<SearchForHeroScreenNavigationProp>();
-  const [text, setText] = useState('');
+  const navigation = useNavigation<SearchForHeroScreenNavigationProp>()
+  const [text, setText] = useState('')
 
   const { data, refetch, isLoading } = useReactQuery<{
-    results: ICharacter[];
+    results: ICharacter[]
   }>({
     path: `characters?orderBy=name${text ? '&nameStartsWith=' + text : ''}`,
     queryName: 'characters',
     dependency: true,
-  });
+  })
 
   useEffect(() => {
-    refetch();
-  }, [text, refetch]);
+    refetch()
+  }, [text, refetch])
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -71,9 +74,9 @@ const SearchForHeroScreen = () => {
               <CardCharacter
                 key={item.id}
                 data={item}
-                onPress={(comicPath) => {
-                  navigation.navigate('Comics', { comicPath, name: item.name });
-                  dispatch(addFavoriteHero(item));
+                onPress={comicPath => {
+                  navigation.navigate('Comics', { comicPath, name: item.name })
+                  dispatch(addFavoriteHero(item))
                 }}
               />
             )}
@@ -92,15 +95,7 @@ const SearchForHeroScreen = () => {
         )}
       </Box>
     </SafeAreaView>
-  );
-};
+  )
+}
 
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: theme.colors.backgroundColor,
-    padding: 16,
-  },
-});
-
-export default SearchForHeroScreen;
+export default SearchForHeroScreen
