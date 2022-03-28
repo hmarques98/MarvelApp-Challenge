@@ -222,8 +222,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.0'
     // implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'androidx.multidex:multidex:2.0.1'
-    compile project(':react-native-vector-icons')
-
+    implementation project(':react-native-vector-icons')
+    implementation ("androidx.browser:browser:1.3.0"){force = true}
+    implementation "androidx.core:core:$androidXCore"
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }

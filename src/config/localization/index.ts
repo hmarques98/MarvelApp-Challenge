@@ -53,4 +53,5 @@ i18n.use(languageDetector).use(initReactI18next).init({
   keySeparator: false,
 })
 
-export default i18n
+const translate = i18n
+export default translate
